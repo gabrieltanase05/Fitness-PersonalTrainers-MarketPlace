@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Code Pro', monospace, sans-serif;
+  font-size: 20px;
+  color: #000; }
+
+@font-face {
+  font-family: "SM Instagram";
+  src: url("../fonts/SocialicoPlus-Plus.woff") format("woff"); }
+
+@font-face {
+  font-family: "SM FbTw";
+  src: url("../fonts/Socialico-Regular.woff") format("woff"); }
+
+body {
+  background-image: url("../images/physical-activity.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative; }
+
+.background {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh; }
+
+.container {
+  margin: 0 auto;
+  width: 90%; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto; }
+  @media only screen and (max-width: 599px) {
+    nav div {
+      height: 17vw;
+      width: 18vw;
+      margin-top: 1vh; } }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    nav div {
+      height: 15vw;
+      width: 18vw;
+      margin-top: 1.5vh; } }
+  @media only screen and (min-width: 1024px) {
+    nav div {
+      height: 4vw;
+      width: 4vw;
+      margin-top: 1em; } }
+  nav img {
+    height: 100%;
+    width: 100%; }
+
+.burgerMenu {
+  display: inline-block;
+  margin-left: 3.2em;
+  cursor: pointer; }
+  .burgerMenu .bar1, .burgerMenu .bar2, .burgerMenu .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: 0.3s; }
+
+.burgerMenu:hover .bar2 {
+  background-color: #00bbff; }
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+.change .bar2 {
+  opacity: 0; }
+
+.change .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px); }
+
+section {
+  font-size: 6vw;
+  text-align: center;
+  margin: 10vh auto;
+  min-height: 52vh;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 2px 8px 2px #d3d3d3;
+  padding: 1vh 1vw 1vh 1vw; }
+
+#sectionOneVisitor {
+  margin-top: 4vh; }
+  @media only screen and (max-width: 599px) {
+    #sectionOneVisitor h1 {
+      font-size: 1.2em; }
+    #sectionOneVisitor h2 {
+      font-size: 1em; }
+    #sectionOneVisitor p {
+      font-size: 0.8em; } }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #sectionOneVisitor h1 {
+      font-size: 0.9em; }
+    #sectionOneVisitor h2 {
+      font-size: 0.7em; }
+    #sectionOneVisitor p {
+      font-size: 0.5em; } }
+  @media only screen and (min-width: 1024px) {
+    #sectionOneVisitor h1 {
+      font-size: 4vh; }
+    #sectionOneVisitor h2 {
+      font-size: 3.5vh; }
+    #sectionOneVisitor p {
+      font-size: 3vh; } }
+
+#sectionTwoVisitor .container div {
+  font-size: 1.2em; }
+
+@media only screen and (max-width: 599px) {
+  #sectionTwoVisitor .container div {
+    font-size: 0.8em; } }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #sectionTwoVisitor .container div {
+    font-size: 0.5em; } }
+
+@media only screen and (min-width: 1024px) {
+  #sectionTwoVisitor .container div {
+    font-size: 0.5em; } }
+
+#sectionThirdVisitor .container button:hover {
+  color: #fff;
+  background-color: #000; }
+
+@media only screen and (max-width: 599px) {
+  #sectionThirdVisitor .container h1 {
+    font-size: 1.2em; }
+  #sectionThirdVisitor .container button {
+    padding: 0.4em;
+    font-size: 0.7em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #sectionThirdVisitor .container h1 {
+    font-size: 0.5em; }
+  #sectionThirdVisitor .container button {
+    padding: 0.2em;
+    font-size: 0.5em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+@media only screen and (min-width: 1024px) {
+  #sectionThirdVisitor .container h1 {
+    font-size: 0.5em; }
+  #sectionThirdVisitor .container button {
+    padding: 0.2em;
+    font-size: 0.3em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+#sectionFourVisitor .container button:hover {
+  color: #fff;
+  background-color: #000; }
+
+@media only screen and (max-width: 599px) {
+  #sectionFourVisitor .container h1 {
+    font-size: 1.2em; }
+  #sectionFourVisitor .container button {
+    padding: 0.4em;
+    font-size: 0.7em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #sectionFourVisitor .container h1 {
+    font-size: 0.5em; }
+  #sectionFourVisitor .container button {
+    padding: 0.2em;
+    font-size: 0.5em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+@media only screen and (min-width: 1024px) {
+  #sectionFourVisitor .container h1 {
+    font-size: 0.5em; }
+  #sectionFourVisitor .container button {
+    padding: 0.2em;
+    font-size: 0.3em;
+    font-weight: 700;
+    border-radius: 0.5em; } }
+
+.articleAsideMenu {
+  font-size: 1.4em;
+  width: 30%;
+  height: 70vh;
+  margin: 0 auto; }
+  .articleAsideMenu .container {
+    height: 100%; }
+    .articleAsideMenu .container .asideMenu {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 2px 2px 8px 2px #d3d3d3;
+      padding: 1vh 1vw 1vh 1vw; }
+      .articleAsideMenu .container .asideMenu .facebook {
+        font-family: 'SM FbTw'; }
+      .articleAsideMenu .container .asideMenu .instagram {
+        font-family: 'SM Instagram'; }
+      .articleAsideMenu .container .asideMenu .twitter {
+        font-family: 'SM FbTw'; }
+      .articleAsideMenu .container .asideMenu div {
+        display: flex;
+        justify-content: center; }
+        .articleAsideMenu .container .asideMenu div a {
+          font-size: 1.6em;
+          text-decoration: none;
+          margin: 0.4em 0.8em;
+          color: #000; }
+        .articleAsideMenu .container .asideMenu div a:hover {
+          color: #00bbff; }
+      .articleAsideMenu .container .asideMenu ul {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding: 0; }
+        .articleAsideMenu .container .asideMenu ul li {
+          margin: 0.5em; }
+          .articleAsideMenu .container .asideMenu ul li a {
+            border: none;
+            background-color: transparent;
+            color: black;
+            text-align: center; }
+          .articleAsideMenu .container .asideMenu ul li a:hover {
+            color: #00bbff; }
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0; }
+  @media only screen and (max-width: 599px) {
+    ul {
+      height: 10vw;
+      width: 90vw; } }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    ul {
+      height: 5vw;
+      width: 90vw; } }
+  @media only screen and (min-width: 1024px) {
+    ul {
+      height: 5vw;
+      width: 90vw; } }
+  ul li {
+    list-style-type: none;
+    margin: 0 1vh 0 1vh; }
+    ul li a {
+      text-decoration: none;
+      border: 1px solid #000;
+      border-radius: 5em;
+      color: darkgrey;
+      font-weight: 700;
+      padding: 0.5vh 0.5vw;
+      margin-top: 1vh;
+      background-color: #000; }
+    ul li a:hover {
+      color: #00bbff; }
+    @media only screen and (max-width: 599px) {
+      ul li a {
+        font-size: 1em; } }
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+      ul li a {
+        font-size: 1.4em; } }
+    @media only screen and (min-width: 1024px) {
+      ul li a {
+        font-size: 1.1em; } }
+
+.socialMedia .container {
+  display: flex; }
+  .socialMedia .container a {
+    margin: 0.2em 0.4em 0.2em 0;
+    color: #000;
+    text-decoration: none; }
+    @media only screen and (max-width: 599px) {
+      .socialMedia .container a {
+        font-size: 2.5em; } }
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+      .socialMedia .container a {
+        font-size: 4em; } }
+    @media only screen and (min-width: 1024px) {
+      .socialMedia .container a {
+        font-size: 3em;
+        margin-right: 0.6em; } }
+  .socialMedia .container a:hover {
+    color: #00bbff; }
+  .socialMedia .container .facebook {
+    font-family: 'SM FbTw'; }
+  .socialMedia .container .instagram {
+    font-family: 'SM Instagram'; }
+  .socialMedia .container .twitter {
+    font-family: 'SM FbTw'; }
+
+form {
+  border: 1px solid #ccc; }
+
+input[type=text], input[type=email], input[type=password] {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: block;
+  background: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  border-radius: 5em; }
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none; }
+
+input[type=checkbox] {
+  margin-bottom: 15px; }
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px; }
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9; }
+
+button:hover {
+  opacity: 1; }
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336; }
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 10%; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+/*# sourceMappingURL=maps/main.css.map */

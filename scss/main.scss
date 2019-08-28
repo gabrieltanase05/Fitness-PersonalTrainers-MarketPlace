@@ -1,0 +1,470 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Code Pro', monospace, sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+@font-face {
+  font-family: "SM Instagram";
+  src: url('../fonts/SocialicoPlus-Plus.woff') format("woff");
+}
+@font-face {
+  font-family: "SM FbTw";
+  src: url('../fonts/Socialico-Regular.woff') format("woff");
+}
+//Background image with attachment -fixed
+body {
+  background-image: url("../images/physical-activity.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  }
+.background {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .7);
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+//NavBar with Buttons and LOGO
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  //LOGO image
+  div {
+    //Mobile Media query
+    @media only screen and (max-width: 599px){
+      height: 17vw;
+      width: 18vw;
+      margin-top: 1vh;
+    }
+    //Tablet Media query
+    @media only screen and (min-width: 600px) and (max-width: 1024px){
+      height: 15vw;
+      width: 18vw;
+      margin-top: 1.5vh;
+    }
+    //Desktop Media query
+    @media only screen and (min-width: 1024px){
+      height: 4vw;
+      width: 4vw;
+      margin-top: 1em;
+    }
+  }
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+//Burger Menu Setting
+.burgerMenu {
+  display: inline-block;
+  margin-left: 3.2em;
+  cursor: pointer;
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: 0.3s;
+  }
+}
+.burgerMenu:hover {
+  .bar2 {
+    background-color: #00bbff;
+  }
+}
+.change {
+  .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .bar2 {
+    opacity: 0;
+  }
+
+  .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+//General Section Settings
+section {
+  font-size: 6vw;
+  text-align: center;
+  margin: 10vh auto;
+  min-height: 52vh;
+  width: 90%;
+  background-color: rgba(255, 255, 255, .9);
+  box-shadow: 2px 2px 8px 2px #d3d3d3;
+  padding: 1vh 1vw 1vh 1vw;
+}
+//First Section Settings - Visitors Page
+#sectionOneVisitor{
+  margin-top: 4vh;
+  //Mobile Media query
+  @media only screen and (max-width: 599px){
+      h1 {
+        font-size: 1.2em;
+      }
+      h2 {
+        font-size: 1em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+    }
+  //Tablet Media query
+  @media only screen and (min-width: 600px) and (max-width: 1024px){
+    h1 {
+      font-size: 0.9em;
+    }
+    h2 {
+      font-size: 0.7em;
+    }
+    p {
+      font-size: 0.5em;
+    }
+  }
+  //Desktop Media query
+  @media only screen and (min-width: 1024px){
+    h1 {
+      font-size: 4vh;
+    }
+    h2 {
+      font-size: 3.5vh;
+    }
+    p {
+      font-size: 3vh;
+    }
+  }
+}
+//Second Section Settings - Visitors Page
+#sectionTwoVisitor .container {
+ div {
+   font-size: 1.2em;
+ }
+  //Mobile Media query
+  @media only screen and (max-width: 599px){
+    div {
+      font-size: 0.8em;
+    }
+  }
+  //Tablet Media query
+  @media only screen and (min-width: 600px) and (max-width: 1024px){
+    div {
+      font-size: 0.5em;
+    }
+  }
+  //Desktop Media query
+  @media only screen and (min-width: 1024px){
+    div {
+      font-size: 0.5em;
+    }
+  }
+}
+//Third Section Settings - Visitors Page
+#sectionThirdVisitor .container {
+  //Hover on SignUP Button
+  button:hover {
+    color: #fff;
+    background-color: #000;
+  }
+  //Mobile Media query
+  @media only screen and (max-width: 599px){
+    h1 {
+      font-size: 1.2em;
+    }
+    //Button styled
+    button {
+      padding: 0.4em;
+      font-size: 0.7em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+  //Tablet Media query
+  @media only screen and (min-width: 600px) and (max-width: 1024px){
+    h1 {
+      font-size: 0.5em;
+    }
+    //Button styled
+    button {
+      padding: 0.2em;
+      font-size: 0.5em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+  //Desktop Media query
+  @media only screen and (min-width: 1024px){
+    h1 {
+      font-size: 0.5em;
+    }
+    //Button styled
+    button {
+      padding: 0.2em;
+      font-size: 0.3em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+}
+//Four Section Settings - Visitors Page
+#sectionFourVisitor .container {
+  button:hover {
+    color: #fff;
+    background-color: #000;
+  }
+  //Mobile Media query
+  @media only screen and (max-width: 599px){
+    h1{
+        font-size: 1.2em;
+    }
+    //Button styled
+    button {
+      padding: 0.4em;
+      font-size: 0.7em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+  //Tablet Media query
+  @media only screen and (min-width: 600px) and (max-width: 1024px){
+    h1 {
+      font-size: 0.5em;
+    }
+    //Button styled
+    button {
+      padding: 0.2em;
+      font-size: 0.5em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+  //Desktop Media query
+  @media only screen and (min-width: 1024px){
+    h1 {
+      font-size: 0.5em;
+    }
+    button {
+      padding: 0.2em;
+      font-size: 0.3em;
+      font-weight: 700;
+      border-radius: 0.5em;
+    }
+  }
+}
+//AsideMenu Section Settings
+.articleAsideMenu {
+  font-size: 1.4em;
+  width: 30%;
+  height: 70vh;
+  margin: 0 auto;
+  .container {
+    height: 100%;
+    .asideMenu {
+      display: none;
+      background-color: rgba(255, 255, 255, .9);
+      box-shadow: 2px 2px 8px 2px #d3d3d3;
+      padding: 1vh 1vw 1vh 1vw;
+      .facebook {
+        font-family: 'SM FbTw';
+      }
+      .instagram {
+        font-family: 'SM Instagram';
+      }
+      .twitter {
+        font-family: 'SM FbTw';
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        a {
+          font-size: 1.6em;
+          text-decoration: none;
+          margin:0.4em 0.8em;
+          color: #000;
+        }
+        a:hover{
+          color: #00bbff;
+        }
+      }
+      ul {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding: 0;
+        li {
+          margin: 0.5em;
+          a {
+            border: none;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+          }
+          a:hover{
+            color: #00bbff;
+          }
+        }
+      }
+    }
+  }
+}
+//All <ul>, <li> from page with an <a> in it
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  //Mobile Media query
+  @media only screen and (max-width: 599px){
+    height: 10vw;
+    width: 90vw;
+  }
+  //Tablet Media query
+  @media only screen and (min-width: 600px) and (max-width: 1024px){
+    height: 5vw;
+    width: 90vw;
+  }
+  @media only screen and (min-width: 1024px){
+    height: 5vw;
+    width: 90vw;
+  }
+  li {
+    list-style-type: none;
+    margin:0 1vh 0 1vh;
+    a {
+      text-decoration: none;
+      border: 1px solid #000;
+      border-radius: 5em;
+      color: darkgrey;
+      font-weight: 700;
+      padding: 0.5vh 0.5vw;
+      margin-top: 1vh;
+      background-color: #000;
+    }
+    a:hover {
+      color: #00bbff;
+    }
+    a {
+      //Mobile Media query
+      @media only screen and (max-width: 599px){
+        font-size: 1em;
+      }
+      //Tablet Media query
+      @media only screen and (min-width: 600px) and (max-width: 1024px){
+        font-size: 1.4em;
+      }
+      //Desktop Media query
+      @media only screen and (min-width: 1024px){
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+//Social Media Footer
+.socialMedia .container {
+  display: flex;
+  a{
+    margin:0.2em 0.4em 0.2em 0;
+    color: #000;
+    text-decoration: none;
+    //Mobile Media query
+    @media only screen and (max-width: 599px){
+      font-size: 2.5em;
+    }
+    //Tablet Media query
+    @media only screen and (min-width: 600px) and (max-width: 1024px){
+      font-size: 4em;
+    }
+    //Desktop Media query
+    @media only screen and (min-width: 1024px){
+      font-size: 3em;
+      margin-right: 0.6em;
+    }
+
+  }
+  a:hover{
+    color: #00bbff;
+  }
+  .facebook {
+    font-family: 'SM FbTw';
+  }
+  .instagram {
+    font-family: 'SM Instagram';
+  }
+  .twitter {
+    font-family: 'SM FbTw';
+  }}
+
+//SignUP Form
+form {
+  border:1px solid #ccc;
+}
+input[type=text],input[type=email], input[type=password] {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: block;
+  background: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  border-radius: 5em;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+input[type=checkbox] {
+  margin-bottom: 15px;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+//SignUP buttons Style
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+//FLOAT for buttons
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 10%;
+}
+
+//Clear fix for FLOAT
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
