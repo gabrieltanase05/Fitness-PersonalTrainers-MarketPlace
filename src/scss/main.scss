@@ -305,7 +305,7 @@ section {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         padding: 0;
         li {
@@ -411,60 +411,113 @@ ul {
   }}
 
 //SignUP Form
-form {
-  border:1px solid #ccc;
+.register, .login, .registerTrainer {
+  form {
+    border:1px solid #ccc;
+  }
+  input[type=text],input[type=email], input[type=password] {
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: block;
+    background: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    border-radius: 5em;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  input[type=checkbox] {
+    margin-bottom: 15px;
+  }
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  //SignUP buttons Style
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+  //FLOAT for buttons
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 10%;
+  }
+
+  //Clear fix for FLOAT
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 }
-input[type=text],input[type=email], input[type=password] {
-  width: 30%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: block;
-  background: #f1f1f1;
-  border: 1px solid #f1f1f1;
-  border-radius: 5em;
+//MemberProfile Style Settings
+//General Information Style Settings
+.generalInformation, .activityInformation {
+  display: flex;
+  width: 100%;
+  padding: 1vh;
+  font-size: 1.1rem;
+  div {
+    width: 30%;
+  }
+  form {
+    font-weight: 700;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  label {
+    padding: 1vh;
+  }
+  .buttonEdit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    button {
+      padding: 0.3vw 0.6vw;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+  hr {
+    border: 1px solid #d4cbcb;
+    width: 100%;
+  }
 }
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-input[type=checkbox] {
-  margin-bottom: 15px;
-}
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+//Activity Information Style Settings
+.activityInformation {
+  form{
+    width: 100%;
+  }
 }
 
-//SignUP buttons Style
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-//FLOAT for buttons
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 10%;
-}
-
-//Clear fix for FLOAT
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+//MemberProfile Style Settings
+#memberProfile {
+  display: none;
+  position: absolute;
+  top: 5em;
+  left: 20em;
+  width: 60%;
 }

@@ -3,57 +3,78 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>My Project</title>
+    <title>Index page</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="src/main.js"></script>
+    <script src="./js/out.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+
 </head>
 <body>
-    <header>
-        <nav>
-                <div>
-                    <a href="#">
-                        <img src="images/logox.png"/>
-                    </a>
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">Login</a> <a href=#>SignUP</a>
-                    </li>
-                </ul>
-        </nav>
-    </header>
-    <section id="sectionOneVisitor">
-        <div class="container">
-            <h1>Find your own Fitness Personal Trainer</h1>
-            <h2>Don't waste your time inefficiently</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat at turpis in iaculis. Integer vitae nisl vitae turpis consequat efficitur eu in sem. Morbi euismod massa non vestibulum facilisis.
-                Duis vitae laoreet ligula. Duis egestas tristique odio eu condimentum. Vivamus convallis dolor et vestibulum vehicula.
-                Etiam sodales, purus sit amet placerat semper, felis dui sagittis eros, a egestas arcu erat id erat.
-                <strong>Let's start</strong>
-            </p>
+<div id="memberProfile"></div>
+<div class="blur"></div>
+<header>
+    <nav>
+        <div>
+            <a href="#">
+                <img src="images/logox.png">
+            </a>
         </div>
-    </section>
-    <section id="sectionTwoVisitor">
-        <div class="container">
-            <div>LARGE IMAGE WHO DESCRIBE SITE ACTIVITY AND HOW TO USE</div>
-        </div>
-    </section>
-    <section id="sectionThirdVisitor">
-        <div class="container">
-            <h1>MOTIVATIONAL TEXT FOR ORDINARY MEMBERS TO</h1>
-            <button>SignUp</button>
-        </div>
-    </section>
-    <section id="sectionFourVisitor">
-        <div class="container">
-            <h1> MOTIVATIONAL TEXT FOR TRAINERS TO </h1>
-            <button>SignUp</button>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
+        <ul>
+            <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
+                <a href="#">SignOut</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="burgerMenu">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+
+    </div>
+</header>
+<article class="articleAsideMenu">
+    <div class="container">
+        <aside class="asideMenu">
             <ul>
+                <li>
+                    <a href="#">Trainers</a>
+                    <ul style="display: none">
+                        <li>Trainers List</li>
+                        <li>How to choose?</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Nutrition</a>
+                    <ul style="display: none">
+                        <li>Supplements <ul>
+                            <li>What you need to know</li>
+                            <li>Online Shops</li>
+                        </ul>
+                        </li>
+                        <li>Nutritional tips</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Equipment</a>
+                </li>
+                <li>
+                    <a href="#">Gym</a>
+                    <ul style="display: none">
+                        <li>Gym List</li>
+                        <li>Hygiene rules</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Messages</a>
+                    <ul style="display: none">
+                        <li>Inbox</li>
+                        <li>Sent</li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#">About</a>
                 </li>
@@ -63,16 +84,21 @@
                 <li>
                     <a href="#">Help</a>
                 </li>
-
             </ul>
-        </div>
-    </footer>
-    <footer class="socialMedia">
-        <div class="container">
-            <div class="facebook"><a href="#">F</a></div>
-            <div class="instagram"><a href="#">I</a></div>
-            <div class="twitter"><a href="#">L</a></div>
-        </div>
-    </footer>
+            <div>
+                <div class="facebook"><a href="#">F</a></div>
+                <div class="instagram"><a href="#">I</a></div>
+                <div class="twitter"><a href="#">L</a></div>
+            </div>
+        </aside>
+    </div>
+</article>
+<footer class="socialMedia">
+    <div class="container">
+        <div class="facebook"><a href="#">F</a></div>
+        <div class="instagram"><a href="#">I</a></div>
+        <div class="twitter"><a href="#">L</a></div>
+    </div>
+</footer>
 </body>
 </html>

@@ -37,7 +37,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
             bar3BurgerMenu.style.backgroundColor ="rgb(0, 191, 255)";
         }
         });
-
+    //Event Listener on Profile Button
+    let profilePage= document.getElementById('memberProfile');
+    let profileButton = document.querySelector('nav ul a');
+    profileButton.addEventListener('click', function (event) {
+       profilePage.style.display='block';
+       menuBurger.style.display ='none;';
+        socialMediaIcons.style.display='none';
+    });
 
 
 

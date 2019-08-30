@@ -225,7 +225,7 @@ section {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         padding: 0; }
         .articleAsideMenu .container .asideMenu ul li {
@@ -303,10 +303,10 @@ ul {
   .socialMedia .container .twitter {
     font-family: 'SM FbTw'; }
 
-form {
+.register form, .login form, .registerTrainer form {
   border: 1px solid #ccc; }
 
-input[type=text], input[type=email], input[type=password] {
+.register input[type=text], .register input[type=email], .register input[type=password], .login input[type=text], .login input[type=email], .login input[type=password], .registerTrainer input[type=text], .registerTrainer input[type=email], .registerTrainer input[type=password] {
   width: 30%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -315,18 +315,18 @@ input[type=text], input[type=email], input[type=password] {
   border: 1px solid #f1f1f1;
   border-radius: 5em; }
 
-input[type=text]:focus, input[type=password]:focus {
+.register input[type=text]:focus, .register input[type=password]:focus, .login input[type=text]:focus, .login input[type=password]:focus, .registerTrainer input[type=text]:focus, .registerTrainer input[type=password]:focus {
   background-color: #ddd;
   outline: none; }
 
-input[type=checkbox] {
+.register input[type=checkbox], .login input[type=checkbox], .registerTrainer input[type=checkbox] {
   margin-bottom: 15px; }
 
-hr {
+.register hr, .login hr, .registerTrainer hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px; }
 
-button {
+.register button, .login button, .registerTrainer button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -336,20 +336,57 @@ button {
   width: 30%;
   opacity: 0.9; }
 
-button:hover {
+.register button:hover, .login button:hover, .registerTrainer button:hover {
   opacity: 1; }
 
-.cancelbtn {
+.register .cancelbtn, .login .cancelbtn, .registerTrainer .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336; }
 
-.cancelbtn, .signupbtn {
+.register .cancelbtn, .register .signupbtn, .login .cancelbtn, .login .signupbtn, .registerTrainer .cancelbtn, .registerTrainer .signupbtn {
   float: left;
   width: 10%; }
 
-.clearfix::after {
+.register .clearfix::after, .login .clearfix::after, .registerTrainer .clearfix::after {
   content: "";
   clear: both;
   display: table; }
+
+.generalInformation, .activityInformation {
+  display: flex;
+  width: 100%;
+  padding: 1vh;
+  font-size: 1.1rem; }
+  .generalInformation div, .activityInformation div {
+    width: 30%; }
+  .generalInformation form, .activityInformation form {
+    font-weight: 700;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
+  .generalInformation label, .activityInformation label {
+    padding: 1vh; }
+  .generalInformation .buttonEdit, .activityInformation .buttonEdit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; }
+    .generalInformation .buttonEdit button, .activityInformation .buttonEdit button {
+      padding: 0.3vw 0.6vw;
+      font-size: 0.8rem;
+      font-weight: 700; }
+  .generalInformation hr, .activityInformation hr {
+    border: 1px solid #d4cbcb;
+    width: 100%; }
+
+.activityInformation form {
+  width: 100%; }
+
+#memberProfile {
+  display: none;
+  position: absolute;
+  top: 5em;
+  left: 20em;
+  width: 60%; }
 
 /*# sourceMappingURL=maps/main.css.map */
