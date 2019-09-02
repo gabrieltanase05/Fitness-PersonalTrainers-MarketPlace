@@ -41,9 +41,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
     let profilePage= document.getElementById('memberProfile');
     let profileButton = document.querySelector('nav ul a');
     profileButton.addEventListener('click', function (event) {
-       profilePage.style.display='block';
-       menuBurger.style.display ='none;';
-        socialMediaIcons.style.display='none';
+       if(profilePage.style.display=='block')
+        {
+            profilePage.style.display ='none';
+            socialMediaIcons.style.display='block';
+       } else {
+           profilePage.style.display = 'block';
+           socialMediaIcons.style.display = 'none';
+       }
     });
 
 

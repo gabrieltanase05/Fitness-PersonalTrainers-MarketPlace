@@ -38,6 +38,9 @@ nav {
   justify-content: space-between;
   width: 95%;
   margin: 0 auto; }
+  nav div a {
+    background-color: transparent;
+    border: none; }
   @media only screen and (max-width: 599px) {
     nav div {
       height: 17vw;
@@ -81,7 +84,7 @@ nav {
   transform: rotate(45deg) translate(-8px, -8px); }
 
 section {
-  font-size: 6vw;
+  font-size: 5vw;
   text-align: center;
   margin: 10vh auto;
   min-height: 52vh;
@@ -155,10 +158,10 @@ section {
   #sectionThirdVisitor .container h1 {
     font-size: 0.5em; }
   #sectionThirdVisitor .container button {
-    padding: 0.2em;
+    padding: 0;
     font-size: 0.3em;
     font-weight: 700;
-    border-radius: 0.5em; } }
+    border-radius: 5em; } }
 
 #sectionFourVisitor .container button:hover {
   color: #fff;
@@ -186,10 +189,13 @@ section {
   #sectionFourVisitor .container h1 {
     font-size: 0.5em; }
   #sectionFourVisitor .container button {
-    padding: 0.2em;
+    padding: 0;
     font-size: 0.3em;
     font-weight: 700;
-    border-radius: 0.5em; } }
+    border-radius: 5em; } }
+
+.about {
+  font-size: 2em; }
 
 .articleAsideMenu {
   font-size: 1.4em;
@@ -216,7 +222,10 @@ section {
           font-size: 1.6em;
           text-decoration: none;
           margin: 0.4em 0.8em;
-          color: #000; }
+          color: #000;
+          background-color: transparent;
+          border: none;
+          font-weight: 400; }
         .articleAsideMenu .container .asideMenu div a:hover {
           color: #00bbff; }
       .articleAsideMenu .container .asideMenu ul {
@@ -254,36 +263,45 @@ ul {
     ul {
       height: 5vw;
       width: 90vw; } }
-  ul li {
-    list-style-type: none;
-    margin: 0 1vh 0 1vh; }
-    ul li a {
-      text-decoration: none;
-      border: 1px solid #000;
-      border-radius: 5em;
-      color: darkgrey;
-      font-weight: 700;
-      padding: 0.5vh 0.5vw;
-      margin-top: 1vh;
-      background-color: #000; }
-    ul li a:hover {
-      color: #00bbff; }
-    @media only screen and (max-width: 599px) {
-      ul li a {
-        font-size: 1em; } }
-    @media only screen and (min-width: 600px) and (max-width: 1024px) {
-      ul li a {
-        font-size: 1.4em; } }
-    @media only screen and (min-width: 1024px) {
-      ul li a {
-        font-size: 1.1em; } }
+
+li {
+  list-style-type: none;
+  margin: 0 1vh 0 1vh; }
+
+a {
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 5em;
+  color: darkgrey;
+  font-weight: 700;
+  padding: 0.5vh 0.5vw;
+  margin-top: 1vh;
+  background-color: #000; }
+
+a:hover {
+  color: #00bbff; }
+
+@media only screen and (max-width: 599px) {
+  a {
+    font-size: 1em; } }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  a {
+    font-size: 1.4em; } }
+
+@media only screen and (min-width: 1024px) {
+  a {
+    font-size: 1.1em; } }
 
 .socialMedia .container {
   display: flex; }
   .socialMedia .container a {
     margin: 0.2em 0.4em 0.2em 0;
     color: #000;
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-weight: 400; }
     @media only screen and (max-width: 599px) {
       .socialMedia .container a {
         font-size: 2.5em; } }
@@ -303,11 +321,14 @@ ul {
   .socialMedia .container .twitter {
     font-family: 'SM FbTw'; }
 
+.register .container, .login .container, .registerTrainer .container {
+  width: 33%; }
+
 .register form, .login form, .registerTrainer form {
   border: 1px solid #ccc; }
 
 .register input[type=text], .register input[type=email], .register input[type=password], .login input[type=text], .login input[type=email], .login input[type=password], .registerTrainer input[type=text], .registerTrainer input[type=email], .registerTrainer input[type=password] {
-  width: 30%;
+  width: 70%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: block;
@@ -327,7 +348,7 @@ ul {
   margin-bottom: 25px; }
 
 .register button, .login button, .registerTrainer button {
-  background-color: #4CAF50;
+  background-color: #00bbff;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -345,12 +366,16 @@ ul {
 
 .register .cancelbtn, .register .signupbtn, .login .cancelbtn, .login .signupbtn, .registerTrainer .cancelbtn, .registerTrainer .signupbtn {
   float: left;
-  width: 10%; }
+  width: 15%; }
 
 .register .clearfix::after, .login .clearfix::after, .registerTrainer .clearfix::after {
   content: "";
   clear: both;
   display: table; }
+
+.register a, .login a, .registerTrainer a {
+  background-color: transparent;
+  border: none; }
 
 .generalInformation, .activityInformation {
   display: flex;
@@ -385,8 +410,8 @@ ul {
 #memberProfile {
   display: none;
   position: absolute;
-  top: 5em;
-  left: 20em;
-  width: 60%; }
+  top: 2em;
+  left: 16em;
+  width: 65%; }
 
 /*# sourceMappingURL=maps/main.css.map */

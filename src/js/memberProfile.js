@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 //Component General Information
 class MemberProfile extends React.Component {

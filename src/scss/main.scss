@@ -42,6 +42,10 @@ nav {
   margin: 0 auto;
   //LOGO image
   div {
+    a{
+      background-color: transparent;
+      border: none;
+    }
     //Mobile Media query
     @media only screen and (max-width: 599px){
       height: 17vw;
@@ -99,7 +103,7 @@ nav {
 }
 //General Section Settings
 section {
-  font-size: 6vw;
+  font-size: 5vw;
   text-align: center;
   margin: 10vh auto;
   min-height: 52vh;
@@ -212,10 +216,10 @@ section {
     }
     //Button styled
     button {
-      padding: 0.2em;
+      padding: 0;
       font-size: 0.3em;
       font-weight: 700;
-      border-radius: 0.5em;
+      border-radius: 5em;
     }
   }
 }
@@ -257,12 +261,16 @@ section {
       font-size: 0.5em;
     }
     button {
-      padding: 0.2em;
+      padding: 0;
       font-size: 0.3em;
       font-weight: 700;
-      border-radius: 0.5em;
+      border-radius: 5em;
     }
   }
+}
+//About HTML Button
+.about {
+  font-size: 2em;
 }
 //AsideMenu Section Settings
 .articleAsideMenu {
@@ -294,6 +302,9 @@ section {
           text-decoration: none;
           margin:0.4em 0.8em;
           color: #000;
+          background-color: transparent;
+          border: none;
+          font-weight: 400;
         }
         a:hover{
           color: #00bbff;
@@ -330,22 +341,24 @@ ul {
   justify-content: flex-end;
   margin-bottom: 0;
   //Mobile Media query
-  @media only screen and (max-width: 599px){
+  @media only screen and (max-width: 599px) {
     height: 10vw;
     width: 90vw;
   }
   //Tablet Media query
-  @media only screen and (min-width: 600px) and (max-width: 1024px){
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
     height: 5vw;
     width: 90vw;
   }
-  @media only screen and (min-width: 1024px){
+  @media only screen and (min-width: 1024px) {
     height: 5vw;
     width: 90vw;
   }
+}
   li {
     list-style-type: none;
-    margin:0 1vh 0 1vh;
+    margin: 0 1vh 0 1vh;
+  }
     a {
       text-decoration: none;
       border: 1px solid #000;
@@ -373,8 +386,6 @@ ul {
         font-size: 1.1em;
       }
     }
-  }
-}
 //Social Media Footer
 .socialMedia .container {
   display: flex;
@@ -382,6 +393,9 @@ ul {
     margin:0.2em 0.4em 0.2em 0;
     color: #000;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
     //Mobile Media query
     @media only screen and (max-width: 599px){
       font-size: 2.5em;
@@ -412,11 +426,15 @@ ul {
 
 //SignUP Form
 .register, .login, .registerTrainer {
+  .container {
+    width: 33%;
+  }
+;
   form {
     border:1px solid #ccc;
   }
   input[type=text],input[type=email], input[type=password] {
-    width: 30%;
+    width: 70%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: block;
@@ -438,7 +456,7 @@ ul {
 
   //SignUP buttons Style
   button {
-    background-color: #4CAF50;
+    background-color: #00bbff;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -460,7 +478,7 @@ ul {
   //FLOAT for buttons
   .cancelbtn, .signupbtn {
     float: left;
-    width: 10%;
+    width: 15%;
   }
 
   //Clear fix for FLOAT
@@ -468,6 +486,10 @@ ul {
     content: "";
     clear: both;
     display: table;
+  }
+  a{
+    background-color: transparent;
+    border: none;
   }
 
 }
@@ -517,7 +539,7 @@ ul {
 #memberProfile {
   display: none;
   position: absolute;
-  top: 5em;
-  left: 20em;
-  width: 60%;
+  top: 2em;
+  left: 16em;
+  width: 65%;
 }

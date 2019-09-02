@@ -15,7 +15,7 @@ class Main extends React.Component {
 document.addEventListener('DOMContentLoaded', function (event) {
 //-----------------------------------------------------------------------//
     ReactDOM.render(
-    <Main />, document.getElementById('memberProfile')
+    <Main/>, document.getElementById('memberProfile')
 )
 //-----------------------------------------------------------------------//
 });
