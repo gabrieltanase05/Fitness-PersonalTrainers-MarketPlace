@@ -18,7 +18,7 @@ html, body {
 }
 //Background image with attachment -fixed
 body {
-  background-image: url("../images/physical-activity.jpeg");
+  background-image: url("../../images/physical-activity.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -27,8 +27,8 @@ body {
 .background {
   position: absolute;
   background-color: rgba(0, 0, 0, .7);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 130vh;
 }
 .container {
   margin: 0 auto;
@@ -319,6 +319,35 @@ section {
         justify-content: flex-end;
         align-items: center;
         padding: 0;
+         ul {
+           #trainersL{
+             font-weight: 500;
+             display: none;
+             padding-left: 3em;
+             font-size: 0.9em;
+             a {
+               border: 2px solid #00bbff;
+             }
+           }
+           #nutritionL {
+             font-weight: 500;
+             display: none;
+             padding-left: 3em;
+             font-size: 0.9em;
+             a {
+               border: 2px solid #00bbff;
+             }
+           }
+           #messagesL {
+             font-weight: 500;
+             display: none;
+             padding-left: 3em;
+             font-size: 0.9em;
+             a {
+               border: 2px solid #00bbff;
+             }
+           }
+         }
         li {
           margin: 0.5em;
           a {
@@ -500,9 +529,54 @@ ul {
   width: 100%;
   padding: 1vh;
   font-size: 1.1rem;
-  div {
-    width: 30%;
+  button {
+    padding: 0.5em;
+    margin-left: 1em;
+    background-color: white;
+    border: 4px solid lightgray;
+    border-radius: 5em;
+    font-weight: 700;
+    font-size: 0.7rem;
+    cursor: pointer;
   }
+  button:hover {
+    color: #00bbff;
+  }
+  div {
+    display: flex;
+    align-items: flex-end;
+    width: 30%;
+//Upload Avatar Images
+    .fileInput {
+      border: 2px solid lightgray;
+      padding: 1em;
+      margin: 0.5em;
+      cursor: pointer;
+    }
+    .imgPreview {
+    text-align: center;
+    margin: 1em;
+    height: 10em;
+    width: 10em;
+    border: 2px solid gray;
+    border-radius: 5em;
+    }
+    img {
+      width: 10em;
+      height: 10em;
+      border-radius: 5em;
+    }
+    .previewText {
+    width: 100%;
+    margin-top: 4em;
+    }
+
+    .centerText {
+    text-align: center;
+    width: 500px;
+    }
+  }
+    //---//
   form {
     font-weight: 700;
     width: 70%;
@@ -512,6 +586,7 @@ ul {
   }
   label {
     padding: 1vh;
+    text-align: left;
   }
   .buttonEdit {
     display: flex;
@@ -526,6 +601,12 @@ ul {
   hr {
     border: 1px solid #d4cbcb;
     width: 100%;
+  }
+  .changeEmail {
+    display: none;
+  }
+  .changePassword {
+    display: none;
   }
 }
 //Activity Information Style Settings

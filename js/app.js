@@ -50,6 +50,37 @@ document.addEventListener('DOMContentLoaded', function (event) {
            socialMediaIcons.style.display = 'none';
        }
     });
+    //Event Listener on Trainer Button from asideMenu
+    let trainersButton = document.getElementById('trainers');
+    let trainersList = document.getElementById('trainersL');
+    trainersButton.addEventListener('click', function (event) {
+        if(trainersList.style.display =='block'){
+            trainersList.style.display='none';
+        } else {
+            trainersList.style.display = 'block';
+        }
+    });
+    //EventListener on Nutrition Button form asideMenu
+    let nutritionButton = document.getElementById('nutrition');
+    let nutritionList = document.getElementById('nutritionL');
+    nutritionButton.addEventListener('click', function (event) {
+        if(nutritionList.style.display =='block'){
+            nutritionList.style.display='none';
+        } else {
+            nutritionList.style.display = 'block';
+        }
+    });
+
+    //EventListener on Messages Button form asideMenu
+    let messagesButton = document.getElementById('messages');
+    let messagesList = document.getElementById('messagesL');
+    messagesButton.addEventListener('click', function (event) {
+        if(messagesList.style.display =='block'){
+            messagesList.style.display='none';
+        } else {
+            messagesList.style.display = 'block';
+        }
+    });
 
 
 

@@ -17,7 +17,7 @@ html, body {
   src: url("../fonts/Socialico-Regular.woff") format("woff"); }
 
 body {
-  background-image: url("../images/physical-activity.jpeg");
+  background-image: url("../../images/physical-activity.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -26,8 +26,8 @@ body {
 .background {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100vw;
-  height: 100vh; }
+  width: 100%;
+  height: 130vh; }
 
 .container {
   margin: 0 auto;
@@ -237,6 +237,27 @@ section {
         justify-content: flex-end;
         align-items: center;
         padding: 0; }
+        .articleAsideMenu .container .asideMenu ul ul #trainersL {
+          font-weight: 500;
+          display: none;
+          padding-left: 3em;
+          font-size: 0.9em; }
+          .articleAsideMenu .container .asideMenu ul ul #trainersL a {
+            border: 2px solid #00bbff; }
+        .articleAsideMenu .container .asideMenu ul ul #nutritionL {
+          font-weight: 500;
+          display: none;
+          padding-left: 3em;
+          font-size: 0.9em; }
+          .articleAsideMenu .container .asideMenu ul ul #nutritionL a {
+            border: 2px solid #00bbff; }
+        .articleAsideMenu .container .asideMenu ul ul #messagesL {
+          font-weight: 500;
+          display: none;
+          padding-left: 3em;
+          font-size: 0.9em; }
+          .articleAsideMenu .container .asideMenu ul ul #messagesL a {
+            border: 2px solid #00bbff; }
         .articleAsideMenu .container .asideMenu ul li {
           margin: 0.5em; }
           .articleAsideMenu .container .asideMenu ul li a {
@@ -382,8 +403,43 @@ a:hover {
   width: 100%;
   padding: 1vh;
   font-size: 1.1rem; }
+  .generalInformation button, .activityInformation button {
+    padding: 0.5em;
+    margin-left: 1em;
+    background-color: white;
+    border: 4px solid lightgray;
+    border-radius: 5em;
+    font-weight: 700;
+    font-size: 0.7rem;
+    cursor: pointer; }
+  .generalInformation button:hover, .activityInformation button:hover {
+    color: #00bbff; }
   .generalInformation div, .activityInformation div {
+    display: flex;
+    align-items: flex-end;
     width: 30%; }
+    .generalInformation div .fileInput, .activityInformation div .fileInput {
+      border: 2px solid lightgray;
+      padding: 1em;
+      margin: 0.5em;
+      cursor: pointer; }
+    .generalInformation div .imgPreview, .activityInformation div .imgPreview {
+      text-align: center;
+      margin: 1em;
+      height: 10em;
+      width: 10em;
+      border: 2px solid gray;
+      border-radius: 5em; }
+    .generalInformation div img, .activityInformation div img {
+      width: 10em;
+      height: 10em;
+      border-radius: 5em; }
+    .generalInformation div .previewText, .activityInformation div .previewText {
+      width: 100%;
+      margin-top: 4em; }
+    .generalInformation div .centerText, .activityInformation div .centerText {
+      text-align: center;
+      width: 500px; }
   .generalInformation form, .activityInformation form {
     font-weight: 700;
     width: 70%;
@@ -391,7 +447,8 @@ a:hover {
     flex-direction: column;
     align-items: flex-start; }
   .generalInformation label, .activityInformation label {
-    padding: 1vh; }
+    padding: 1vh;
+    text-align: left; }
   .generalInformation .buttonEdit, .activityInformation .buttonEdit {
     display: flex;
     justify-content: flex-end;
@@ -403,6 +460,10 @@ a:hover {
   .generalInformation hr, .activityInformation hr {
     border: 1px solid #d4cbcb;
     width: 100%; }
+  .generalInformation .changeEmail, .activityInformation .changeEmail {
+    display: none; }
+  .generalInformation .changePassword, .activityInformation .changePassword {
+    display: none; }
 
 .activityInformation form {
   width: 100%; }

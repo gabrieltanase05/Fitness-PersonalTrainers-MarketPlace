@@ -1,18 +1,98 @@
 import React from 'react';
 
+    class ImageUploadX extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {file: '',imagePreviewUrl: ''};
+    }
+
+    _handleSubmit(e) {
+        e.preventDefault();
+        // TODO: do something with -> this.state.file
+        console.log('handle uploading-', this.state.file);
+    }
+
+    _handleImageChange(e) {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        };
+
+        reader.readAsDataURL(file)
+    }
+
+    render() {
+        let {imagePreviewUrl} = this.state;
+        let $imagePreview = null;
+        if (imagePreviewUrl) {
+            $imagePreview = (<img src={imagePreviewUrl} />);
+        } else {
+            $imagePreview = (<div className="previewText">Please select an Avatar</div>);
+        }
+
+        return (
+            <div className="previewComponent">
+                <div className="imgPreview">
+                    {$imagePreview}
+                </div>
+                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                    <button className="submitButton"
+                            type="submit"
+                            onClick={(e)=>this._handleSubmit(e)}>Upload
+                    </button>
+                    <input className="fileInput"
+                           type="file"
+                           onChange={(e)=>this._handleImageChange(e)} />
+                </form>
+            </div>
+        )
+    }
+}
+
+
 //Component General Information
 class MemberProfile extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            edit: false
+            edit: false,
+            displayEmail: 'none',
+            displayPass: 'none'
         }
     }
     enableEditing = (event) => {
         this.setState({
             edit:true
-        })
-
+        });
+    };
+    handleEmail = (event) => {
+        if(this.state.displayEmail === 'block'){
+            this.setState({
+                displayEmail: 'none'
+            })
+        } else {
+            this.setState({
+                displayEmail: 'block'
+            })
+        }
+    };
+    handlePass = (event) => {
+        if(this.state.displayPass === 'block'){
+            this.setState({
+                displayPass: 'none'
+            })
+        } else {
+            this.setState({
+                displayPass: 'block'
+            })
+        }
     };
     render() {
         return (
@@ -50,30 +130,38 @@ class MemberProfile extends React.Component {
                 :
                 <section>
                     <article className="generalInformation">
-                        <div> AVATAR UPLOAD</div>
+                        <div> <ImageUploadX/> </div>
                         <form><h1>General Information</h1>
                             <hr/>
                             <label>First Name:
-                                <input placeholder="Type your First Name"/>
                             </label>
                             <label>Last Name:
-                                <input placeholder="Type your Last Name"/>
                             </label>
                             <label> E-mail Address:
-                                <button>Change E-mail</button><br/>
-                                <input placeholder="Type Your E-mail"/><br/>
-                                <input placeholder="New E-mail"/><br/>
-                                <input placeholder="Repeat New E-mail"/>
+                                <button onClick={this.handleEmail}>Change E-mail</button><br/>
+                                <span style={{display: this.state.displayEmail}}>
+                                    <input placeholder="Type Your E-mail"/><br/>
+                                    <input placeholder="New E-mail"/><br/>
+                                    <input placeholder="Repeat New E-mail"/>
+                                </span>
                             </label>
-                            <label>Date of Birth:</label>
-                            <label>Country:</label>
-                            <label>City:</label>
+                            <label>Date of Birth:
+                                <input/>
+                            </label>
+                            <label>Country:
+                                <input/>
+                            </label>
+                            <label>City:
+                                <input/>
+                            </label>
                             <label>
-                                <button>Reset Password</button>
+                                <button onClick={this.handlePass}>Change Password</button>
                                 <br/>
-                                Password <input placeholder="Type your Password"/> <br/>
+                                <span style={{display: this.state.displayPass}}>
+                                Current Password <input placeholder="Type your Password"/> <br/>
                                 New Password <input placeholder="Type New Password"/> <br/>
                                 Repeat New Password <input placeholder="Repeat New Password"/>
+                                </span>
                             </label>
                         </form>
                     </article>
