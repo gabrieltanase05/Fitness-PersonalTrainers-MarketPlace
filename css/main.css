@@ -27,7 +27,7 @@ body {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
-  height: 130vh; }
+  height: 105vh; }
 
 .container {
   margin: 0 auto;
@@ -194,10 +194,17 @@ section {
     font-weight: 700;
     border-radius: 5em; } }
 
-.about {
-  font-size: 2em; }
+.about, .contact, .help {
+  font-size: 2em;
+  position: absolute;
+  z-index: -1;
+  left: 2.5em;
+  top: 4em; }
 
 .articleAsideMenu {
+  position: absolute;
+  z-index: 10;
+  display: none;
   font-size: 1.4em;
   width: 30%;
   height: 70vh;
@@ -205,7 +212,6 @@ section {
   .articleAsideMenu .container {
     height: 100%; }
     .articleAsideMenu .container .asideMenu {
-      display: none;
       background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 2px 2px 8px 2px #d3d3d3;
       padding: 1vh 1vw 1vh 1vw; }
@@ -226,8 +232,8 @@ section {
           background-color: transparent;
           border: none;
           font-weight: 400; }
-        .articleAsideMenu .container .asideMenu div a:hover {
-          color: #00bbff; }
+        .articleAsideMenu .container .asideMenu div li:hover {
+          color: #0bf; }
       .articleAsideMenu .container .asideMenu ul {
         margin-top: 0;
         width: 100%;
@@ -242,22 +248,16 @@ section {
           display: none;
           padding-left: 3em;
           font-size: 0.9em; }
-          .articleAsideMenu .container .asideMenu ul ul #trainersL a {
-            border: 2px solid #00bbff; }
         .articleAsideMenu .container .asideMenu ul ul #nutritionL {
           font-weight: 500;
           display: none;
           padding-left: 3em;
           font-size: 0.9em; }
-          .articleAsideMenu .container .asideMenu ul ul #nutritionL a {
-            border: 2px solid #00bbff; }
         .articleAsideMenu .container .asideMenu ul ul #messagesL {
           font-weight: 500;
           display: none;
           padding-left: 3em;
           font-size: 0.9em; }
-          .articleAsideMenu .container .asideMenu ul ul #messagesL a {
-            border: 2px solid #00bbff; }
         .articleAsideMenu .container .asideMenu ul li {
           margin: 0.5em; }
           .articleAsideMenu .container .asideMenu ul li a {
@@ -416,7 +416,8 @@ a:hover {
     color: #00bbff; }
   .generalInformation div, .activityInformation div {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
     width: 30%; }
     .generalInformation div .fileInput, .activityInformation div .fileInput {
       border: 2px solid lightgray;
@@ -436,7 +437,7 @@ a:hover {
       border-radius: 5em; }
     .generalInformation div .previewText, .activityInformation div .previewText {
       width: 100%;
-      margin-top: 4em; }
+      margin-top: 1em; }
     .generalInformation div .centerText, .activityInformation div .centerText {
       text-align: center;
       width: 500px; }

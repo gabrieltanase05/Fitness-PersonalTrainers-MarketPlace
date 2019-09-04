@@ -3,7 +3,10 @@ import React from 'react';
     class ImageUploadX extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {file: '',imagePreviewUrl: ''};
+        this.state = {
+            file: '',
+            imagePreviewUrl: ''
+        };
     }
 
     _handleSubmit(e) {
@@ -99,7 +102,9 @@ class MemberProfile extends React.Component {
             this.state.edit === false ?
                 <section>
                     <article className="generalInformation">
-                        <div> AVATAR UPLOAD</div>
+                        <div><div className="imgPreview">
+                            <img src={this.state.imagePreviewUrl}/>
+                        </div></div>
                         <form>
                             <h1>General Information</h1>
                             <hr/>

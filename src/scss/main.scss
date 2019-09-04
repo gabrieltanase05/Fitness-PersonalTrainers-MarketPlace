@@ -28,7 +28,7 @@ body {
   position: absolute;
   background-color: rgba(0, 0, 0, .7);
   width: 100%;
-  height: 130vh;
+  height: 105vh;
 }
 .container {
   margin: 0 auto;
@@ -269,11 +269,18 @@ section {
   }
 }
 //About HTML Button
-.about {
+.about, .contact, .help {
   font-size: 2em;
+  position: absolute;
+  z-index: -1;
+  left: 2.5em;
+  top: 4em;
 }
 //AsideMenu Section Settings
 .articleAsideMenu {
+  position: absolute;
+  z-index: 10;
+  display: none;
   font-size: 1.4em;
   width: 30%;
   height: 70vh;
@@ -281,7 +288,6 @@ section {
   .container {
     height: 100%;
     .asideMenu {
-      display: none;
       background-color: rgba(255, 255, 255, .9);
       box-shadow: 2px 2px 8px 2px #d3d3d3;
       padding: 1vh 1vw 1vh 1vw;
@@ -294,7 +300,7 @@ section {
       .twitter {
         font-family: 'SM FbTw';
       }
-      div{
+      div {
         display: flex;
         justify-content: center;
         a {
@@ -306,8 +312,8 @@ section {
           border: none;
           font-weight: 400;
         }
-        a:hover{
-          color: #00bbff;
+        li:hover {
+          color: #0bf;
         }
       }
       ul {
@@ -325,27 +331,18 @@ section {
              display: none;
              padding-left: 3em;
              font-size: 0.9em;
-             a {
-               border: 2px solid #00bbff;
-             }
            }
            #nutritionL {
              font-weight: 500;
              display: none;
              padding-left: 3em;
              font-size: 0.9em;
-             a {
-               border: 2px solid #00bbff;
-             }
            }
            #messagesL {
              font-weight: 500;
              display: none;
              padding-left: 3em;
              font-size: 0.9em;
-             a {
-               border: 2px solid #00bbff;
-             }
            }
          }
         li {
@@ -544,7 +541,8 @@ ul {
   }
   div {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
     width: 30%;
 //Upload Avatar Images
     .fileInput {
@@ -568,7 +566,7 @@ ul {
     }
     .previewText {
     width: 100%;
-    margin-top: 4em;
+    margin-top: 1em;
     }
 
     .centerText {

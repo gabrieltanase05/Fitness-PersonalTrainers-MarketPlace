@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
    let menuBurger = document.querySelector('.burgerMenu');
    let bar1BurgerMenu = document.querySelector('.bar1');
    let bar3BurgerMenu = document.querySelector('.bar3');
-   let asideMenu = document.querySelector('.asideMenu');
+   let asideMenu = document.querySelector('.articleAsideMenu');
    let socialMediaIcons = document.querySelector('.socialMedia');
    let backgroundBlur = document.querySelector('.blur');
 
@@ -56,8 +56,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
     trainersButton.addEventListener('click', function (event) {
         if(trainersList.style.display =='block'){
             trainersList.style.display='none';
+            trainersButton.style.color = '#000';
         } else {
             trainersList.style.display = 'block';
+            trainersButton.style.color = '#0bf';
+            if ( nutritionList.style.display == 'block' ||
+                messagesList.style.display == 'block') {
+                nutritionList.style.display = 'none';
+                nutritionButton.style.color = '#000';
+                messagesList.style.display = 'none';
+                messagesButton.style.color = '#000';
+            }
         }
     });
     //EventListener on Nutrition Button form asideMenu
@@ -66,8 +75,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
     nutritionButton.addEventListener('click', function (event) {
         if(nutritionList.style.display =='block'){
             nutritionList.style.display='none';
+            nutritionButton.style.color = '#000';
         } else {
             nutritionList.style.display = 'block';
+            nutritionButton.style.color = '#0bf';
+            if ( trainersList.style.display == 'block' ||
+                messagesList.style.display == 'block') {
+                trainersList.style.display = 'none';
+                trainersButton.style.color = '#000';
+                messagesList.style.display = 'none';
+                messagesButton.style.color = '#000';
+            }
         }
     });
 
@@ -77,8 +95,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
     messagesButton.addEventListener('click', function (event) {
         if(messagesList.style.display =='block'){
             messagesList.style.display='none';
+            messagesButton.style.color = '#000';
         } else {
             messagesList.style.display = 'block';
+            messagesButton.style.color = '#0bf';
+            if ( nutritionList.style.display == 'block' ||
+                trainersList.style.display == 'block') {
+                nutritionList.style.display = 'none';
+                nutritionButton.style.color = '#000';
+                trainersList.style.display = 'none';
+                trainersButton.style.color = '#000';
+            }
         }
     });
 
