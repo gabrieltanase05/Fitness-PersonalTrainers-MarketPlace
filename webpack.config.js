@@ -6,7 +6,7 @@ const scssFile = "main.scss";
 module.exports = {
     devtool: 'source-map',
     entry: [
-        `${entryPath}src/js/${entryFile}`,
+        'whatwg-fetch',`${entryPath}src/js/${entryFile}`,
         `${entryPath}src/scss/${scssFile}`
     ],
     output: {
