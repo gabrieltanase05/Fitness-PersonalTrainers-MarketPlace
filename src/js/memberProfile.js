@@ -5,19 +5,20 @@ class ImageUploadX extends React.Component {
         super(props);
         this.state = {
             file: '',
-            imagePreviewUrl: ''
+            imagePreviewUrl: '',
         };
     }
 
 
-    _handleSubmit(e) {
-        e.preventDefault();
-        // TODO: do something with -> this.state.file
-        console.log('handle uploading-', this.state.file);
-    }
+    // _handleSubmit(e) {
+    //     //e.preventDefault();
+    //     //Do something with -> this.state.file
+    //
+    //     console.log('handle uploading-', this.state.file);
+    // }
 
     _handleImageChange(e) {
-        e.preventDefault();
+        //e.preventDefault();
 
         let reader = new FileReader();
         let file = e.target.files[0];
@@ -47,10 +48,10 @@ class ImageUploadX extends React.Component {
                     {$imagePreview}
                 </div>
                 <form onSubmit={(e)=>this._handleSubmit(e)}>
-                    <button className="submitButton"
-                            type="submit"
-                            onClick={(e)=>this._handleSubmit(e)}>Upload
-                    </button>
+                    {/*<button className="submitButton"*/}
+                    {/*        type="submit"*/}
+                    {/*        onClick={(e)=>this._handleSubmit(e)}>Upload*/}
+                    {/*</button>*/}
                     <input className="fileInput"
                            type="file"
                            onChange={(e)=>this._handleImageChange(e)} />
@@ -68,25 +69,21 @@ class MemberProfile extends React.Component {
             displayEmail: 'none',
             displayPass: 'none',
             loaded: false,
-            dataGI: {
-                avatar: '',
-                trainer: false,
-                firstName: '',
-                lastName: '',
-                email: '',
-                dateOfBirth: '',
-                country: '',
-                city: '',
-            },
-            dataAI: {
-                location: '',
-                foodType: '',
-                goal: '',
-                description: '',
-                medicalIssues: '',
-                training: ''
-            }
-
+            id: '',
+            avatar: '',
+            trainer: false,
+            firstName: '',
+            lastName: '',
+            email: '',
+            dateOfBirth: '',
+            country: '',
+            city: '',
+            location: '',
+            foodType: '',
+            goal: '',
+            description: '',
+            medicalIssues: '',
+            training: ''
         }
     }
     componentDidMount() {
@@ -94,53 +91,39 @@ class MemberProfile extends React.Component {
         const url = "http://localhost:3000/users";
         fetch(url,{
             method: 'GET',
-            body: JSON.stringify()
         }).then(response => {
             return response.json()
-        }).then(json =>{
-            json.map(element => {
+        }).then(data =>{
+            data.map(element => {
                 this.setState({
                     loaded: true,
-                    dataGI: {
-                        avatar: element.avatar,
-                        trainer: element.trainer,
-                        firstName: element.firstName,
-                        lastName: element.lastName,
-                        email: element.email,
-                        dateOfBirth: element.dateOfBirth,
-                        country: element.country,
-                        city: element.city,
-                    },
-                    dataAI: {
-                        location: element.location,
-                        foodType: element.foodType,
-                        goal: element.goal,
-                        description: element.description,
-                        medicalIssues: element.medicalIssues,
-                        training: element.training
-                    }
-
+                    id: element.id,
+                    avatar: element.avatar,
+                    trainer: element.trainer,
+                    firstName: element.firstName,
+                    lastName: element.lastName,
+                    email: element.email,
+                    dateOfBirth: element.dateOfBirth,
+                    country: element.country,
+                    city: element.city,
+                    location: element.location,
+                    foodType: element.foodType,
+                    goal: element.goal,
+                    description: element.description,
+                    medicalIssues: element.medicalIssues,
+                    training: element.training
                 });
             });
+            console.log(data)
         });
     }
-    //Change function to edit Activity information state
-    handleChangeAI = (event) => {
-        this.setState({
-            dataAI: {
-                [event.target.name]: event.target.value
-            }
-        });
-    };
     //Change function to edit General information state
-    handleChangeGI = (event) => {
+    handleChange = (event) => {
       this.setState({
-         dataGI: {
             [event.target.name]: event.target.value
-         }
       });
     };
-    //Make Profil Page Editable
+    //Make Profile Page Editable
     enableEditing = (event) => {
         this.setState({
             edit:true
@@ -172,9 +155,17 @@ class MemberProfile extends React.Component {
     };
     //This function allow to Update the information on Database
     updateInfo = (event) =>{
-
+        console.log(this.state.id);
+        const dataX = {};
+        this.state = dataX;
+        fetch("http://localhost:3000/users/" +this.state.id,{
+            method: 'PUT',
+            body: JSON.stringify(dataX)
+        }).then(response => {
+            response.json();
+            console.log(response);
+        });
         this.setState({
-            loaded: true,
             edit: false
         });
     };
@@ -184,7 +175,7 @@ class MemberProfile extends React.Component {
                 <section>
                     <article className="generalInformation">
                         <div><div className="imgPreview">
-                            <img src={this.state.dataGI.avatar}/>
+                            <img src={this.state.avatar}/>
                         </div></div>
                         <form>
                             <h1>General Information</h1>
@@ -192,37 +183,37 @@ class MemberProfile extends React.Component {
                             <label className="buttonEdit">
                                 <button onClick={this.enableEditing}>Edit</button>
                             </label>
-                            <label>First Name: {this.state.dataGI.firstName}</label>
-                            <label>Last Name: {this.state.dataGI.lastName}</label>
-                            <label> E-mail Address: {this.state.dataGI.email}</label>
-                            <label>Date of Birth: {this.state.dataGI.dateOfBirth}</label>
-                            <label>Country: {this.state.dataGI.country}</label>
-                            <label>City: {this.state.dataGI.city}</label>
+                            <label>First Name: {this.state.firstName}</label>
+                            <label>Last Name: {this.state.lastName}</label>
+                            <label> E-mail Address: {this.state.email}</label>
+                            <label>Date of Birth: {this.state.dateOfBirth}</label>
+                            <label>Country: {this.state.country}</label>
+                            <label>City: {this.state.city}</label>
                         </form>
                     </article>
                     <article className="activityInformation">
                         <form><h1>Activity Information</h1>
                             <hr/>
-                            <label>Activity Location: {this.state.dataAI.location}</label>
-                            <label>Food Type: {this.state.dataAI.foodType}</label>
-                            <label>My Goal: {this.state.dataAI.goal}</label>
-                            <label>Description: {this.state.dataAI.description}</label>
-                            <label>Health and Medical Issues: {this.state.dataAI.medicalIssues}</label>
-                            <label>Training History: {this.state.dataAI.training}</label>
+                            <label>Activity Location: {this.state.location}</label>
+                            <label>Food Type: {this.state.foodType}</label>
+                            <label>My Goal: {this.state.goal}</label>
+                            <label>Description: {this.state.description}</label>
+                            <label>Health and Medical Issues: {this.state.medicalIssues}</label>
+                            <label>Training History: {this.state.training}</label>
                         </form>
                     </article>
                 </section>
                 :
                 <section>
                     <article className="generalInformation">
-                        <div> <ImageUploadX/> </div>
+                        <div> <ImageUploadX avatarUpload = {this.state.file}/> </div>
                         <form><h1>General Information</h1>
                             <hr/>
-                            <label>First Name: {this.state.dataGI.firstName}
+                            <label>First Name: {this.state.firstName}
                             </label>
-                            <label>Last Name: {this.state.dataGI.lastName}
+                            <label>Last Name: {this.state.lastName}
                             </label>
-                            <label> E-mail Address: {this.state.dataGI.email}
+                            <label> E-mail Address: {this.state.email}
                                 <button onClick={this.handleEmail}>Change E-mail</button><br/>
                                 <span style={{display: this.state.displayEmail}}>
                                     <input type='email' placeholder="Type Your E-mail"/><br/>
@@ -231,14 +222,14 @@ class MemberProfile extends React.Component {
                                 </span>
                             </label>
                             <label>Date of Birth:
-                                <input type='date' name={'dateOfBirth'} onChange={this.handleChangeGI} value={this.state.dataGI.dateOfBirth}/>
+                                <input type='date' name={'dateOfBirth'} onChange={this.handleChange} value={this.state.dateOfBirth}/>
                             </label>
                             <label>Country:
-                                <input type='text' name={'country'} onChange={this.handleChangeGI}
-                                       value={this.state.dataGI.country} placeholder={this.state.dataGI.country}/>
+                                <input type='text' name={'country'} onChange={this.handleChange}
+                                       value={this.state.country} placeholder={this.state.country}/>
                             </label>
                             <label>City:
-                                <input type='text' name={'city'} onChange={this.handleChangeGI} value={this.state.dataGI.city}/>
+                                <input type='text' name={'city'} onChange={this.handleChange} value={this.state.city}/>
                             </label>
                             <label>
                                 <button onClick={this.handlePass}>Change Password</button>
@@ -255,15 +246,15 @@ class MemberProfile extends React.Component {
                         <form><h1>Activity Information</h1>
                             <hr/>
                             <label>Activity Location:
-                                <select name={'location'} value={this.state.dataAI.location} onChange={this.handleChangeAI}>
-                                    <option selected hidden>Select</option>
+                                <select name={'location'}  value={this.state.location} onChange={this.handleChange}>
+                                    <option defaultValue={'selected'} hidden>Select</option>
                                     <option value={'Gym'}>Gym</option>
                                     <option value={'Outdoor'}>Outdoor</option>
                                 </select>
                             </label>
                             <label>Food Type:
-                                <select name={'foodType'} value={this.state.dataAI.foodType} onChange={this.handleChangeAI}>
-                                    <option selected hidden>Select</option>
+                                <select name={'foodType'} value={this.state.foodType} onChange={this.handleChange}>
+                                    <option defaultValue={'selected'} hidden>Select</option>
                                     <option value={'Omnivores'}>Omnivores</option>
                                     <option value={'Vegetarian'}>Vegetarian</option>
                                     <option value={'Vegan'}>Vegan</option>
@@ -272,8 +263,8 @@ class MemberProfile extends React.Component {
                                 </select>
                             </label>
                             <label>My Goal:
-                                <select name={'goal'} value={this.state.dataAI.goal} onChange={this.handleChangeAI}>
-                                    <option selected hidden>Select</option>
+                                <select name={'goal'} value={this.state.goal} onChange={this.handleChange}>
+                                    <option defaultValue={'selected'} hidden>Select</option>
                                     <option value={'Lose Weight'}>Lose Weight</option>
                                     <option value={'Increase Weight'}>Increase Weight</option>
                                     <option value={'Bodybuilding'}>Bodybuilding</option>
@@ -283,13 +274,13 @@ class MemberProfile extends React.Component {
                             </label>
                             <label>Description:</label>
                             <textarea name={'description'} placeholder="Describe yourself" rows={8}
-                                      value={this.state.dataAI.description} onChange={this.handleChangeAI}/>
+                                      value={this.state.description} onChange={this.handleChange}/>
                             <label>Health and Medical Issues:</label>
                             <textarea name={'medicalIssues'} placeholder="Any health or medical issues?" rows={5}
-                                      value={this.state.dataAI.medicalIssues} onChange={this.handleChangeAI}/>
+                                      value={this.state.medicalIssues} onChange={this.handleChange}/>
                             <label>Training History:</label>
                             <textarea name={'training'} placeholder="Describe your Training history in few words" rows={5}
-                                      value={this.state.dataAI.training} onChange={this.handleChangeAI}/>
+                                      value={this.state.training} onChange={this.handleChange}/>
                             <label className="buttonEdit">
                                 <button onClick={this.updateInfo}>Save</button>
                             </label>
