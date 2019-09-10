@@ -10,13 +10,28 @@ class ImageUploadX extends React.Component {
     }
 
 
-    // _handleSubmit(e) {
-    //     //e.preventDefault();
-    //     //Do something with -> this.state.file
-    //
-    //     console.log('handle uploading-', this.state.file);
-    // }
-
+    _handleSubmit(e) {
+        //e.preventDefault();
+        //Do something with -> this.state.file
+        const fileInput = document.querySelector('.fileInput');
+        const formData = new FormData();
+        formData.append("avatar", this.state.file);
+            fetch("http://localhost:3000/users/1",{
+                method: 'PUT',
+                body: formData
+            }).then(response => {
+                response.json();
+                console.log(response)
+            }).then(
+                success => console.log(success) // Handle the success response object
+            ).catch(
+                error => console.log(error) // Handle the error response object
+            );
+            this.setState({
+                edit:false
+            });
+            console.log('handle uploading-', this.state.file);
+    }
     _handleImageChange(e) {
         //e.preventDefault();
 
@@ -48,10 +63,10 @@ class ImageUploadX extends React.Component {
                     {$imagePreview}
                 </div>
                 <form onSubmit={(e)=>this._handleSubmit(e)}>
-                    {/*<button className="submitButton"*/}
-                    {/*        type="submit"*/}
-                    {/*        onClick={(e)=>this._handleSubmit(e)}>Upload*/}
-                    {/*</button>*/}
+                    <button className="submitButton"
+                            type="submit"
+                            onClick={(e)=>this._handleSubmit(e)}>Upload
+                    </button>
                     <input className="fileInput"
                            type="file"
                            onChange={(e)=>this._handleImageChange(e)} />
@@ -114,7 +129,6 @@ class MemberProfile extends React.Component {
                     training: element.training
                 });
             });
-            console.log(data)
         });
     }
     //Change function to edit General information state
@@ -155,15 +169,26 @@ class MemberProfile extends React.Component {
     };
     //This function allow to Update the information on Database
     updateInfo = (event) =>{
-        console.log(this.state.id);
-        const dataX = {};
-        this.state = dataX;
+        const dataSend = {
+            dateOfBirth: this.state.dateOfBirth,
+            country: this.state.country,
+            city: this.state.city,
+            location: this.state.location,
+            foodType: this.state.foodType,
+            goal : this.state.goal,
+            description: this.state.description,
+            medicalIssues: this.state.medicalIssues,
+            training: this.state.training
+        };
         fetch("http://localhost:3000/users/" +this.state.id,{
             method: 'PUT',
-            body: JSON.stringify(dataX)
+            body: JSON.stringify(dataSend),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         }).then(response => {
             response.json();
-            console.log(response);
+            console.log(response)
         });
         this.setState({
             edit: false
@@ -206,7 +231,7 @@ class MemberProfile extends React.Component {
                 :
                 <section>
                     <article className="generalInformation">
-                        <div> <ImageUploadX avatarUpload = {this.state.file}/> </div>
+                        <div> <ImageUploadX userId = {this.state.id}/> </div>
                         <form><h1>General Information</h1>
                             <hr/>
                             <label>First Name: {this.state.firstName}

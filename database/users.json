@@ -1,21 +1,10 @@
 {
   "users": [
     {
-      "id": 12,
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png",
-      "trainer": true,
-      "firstName": "Marius",
-      "lastName": "Tanase",
-      "email": "bbk05@yahoo.com",
-      "dateOfBirth": "16/05/1994",
-      "country": "Romania",
-      "city": "Bucharest",
-      "location": "Gym",
-      "foodType": "Omnivores",
-      "goal": "Bodybuilding",
-      "description": "I'm the best trainer in the world!",
-      "medicalIssues": "Knee and back",
-      "training": "A lot!"
+      "description": "kita kita kita ",
+      "medicalIssues": "kita",
+      "training": "asda",
+      "id": 1
     }
   ]
 }
