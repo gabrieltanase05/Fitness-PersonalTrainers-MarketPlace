@@ -69,6 +69,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         }
     });
+
+    //EventListener on Trainers List Button from asideMenu
+    let trainersListReact = document.querySelector('#trainersList');
+    document.querySelector("#trainersL li").addEventListener('click', function (event) {
+            trainersListReact.style.display = 'block';
+            asideMenu.style.display = 'none';
+            socialMediaIcons.style.display ='block';
+            menuBurger.classList.remove("change");
+            backgroundBlur.classList.remove('background');
+            bar1BurgerMenu.style.backgroundColor ="#000";
+            bar3BurgerMenu.style.backgroundColor ="#000";
+
+    });
     //EventListener on Nutrition Button form asideMenu
     let nutritionButton = document.getElementById('nutrition');
     let nutritionList = document.getElementById('nutritionL');

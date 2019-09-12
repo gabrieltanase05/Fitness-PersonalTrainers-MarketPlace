@@ -512,18 +512,17 @@ ul {
     float: left;
     width: 15%;
   }
-
-  //Clear fix for FLOAT
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
   a{
     background-color: transparent;
     border: none;
   }
 
+}
+//Clear fix for FLOAT
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 //MemberProfile Style Settings
 //General Information Style Settings
@@ -640,6 +639,58 @@ ul {
   display: none;
   position: absolute;
   top: 2em;
-  left: 16em;
+  left: 10em;
   width: 65%;
+  z-index: 1;
 }
+//Trainers List Page Style Settings
+#trainersList {
+  display: none;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 95%;
+  .sectionTrainersList {
+    .container {
+      font-size: 1rem;
+      .element{
+        float: left;
+        width: 47%;
+        display: flex;
+        border: #999999 solid 2px;
+        border-radius: 5em 0.3em 0.3em 5em;
+        height: 10em;
+        background-color: #00bbff;
+        align-items: center;
+        margin: 1em 0.5em 1em 0.5em;
+        div {
+          height: 10em;
+          img{
+            width: 10em;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 55%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          align-items: flex-start;
+          li {
+            margin-bottom: 0.5em;
+          }
+        }
+        button {
+          height: 3em;
+          width: 6em;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}
+

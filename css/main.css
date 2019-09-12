@@ -394,14 +394,14 @@ a:hover {
   float: left;
   width: 15%; }
 
-.register .clearfix::after, .login .clearfix::after, .registerTrainer .clearfix::after {
-  content: "";
-  clear: both;
-  display: table; }
-
 .register a, .login a, .registerTrainer a {
   background-color: transparent;
   border: none; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 #memberProfile section {
   background-color: #fafafa; }
@@ -491,7 +491,48 @@ a:hover {
   display: none;
   position: absolute;
   top: 2em;
-  left: 16em;
-  width: 65%; }
+  left: 10em;
+  width: 65%;
+  z-index: 1; }
+
+#trainersList {
+  display: none;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 95%; }
+  #trainersList .sectionTrainersList .container {
+    font-size: 1rem; }
+    #trainersList .sectionTrainersList .container .element {
+      float: left;
+      width: 47%;
+      display: flex;
+      border: #999999 solid 2px;
+      border-radius: 5em 0.3em 0.3em 5em;
+      height: 10em;
+      background-color: #00bbff;
+      align-items: center;
+      margin: 1em 0.5em 1em 0.5em; }
+      #trainersList .sectionTrainersList .container .element div {
+        height: 10em; }
+        #trainersList .sectionTrainersList .container .element div img {
+          width: 10em;
+          height: 100%;
+          border-radius: 50%; }
+      #trainersList .sectionTrainersList .container .element ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 55%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: flex-start; }
+        #trainersList .sectionTrainersList .container .element ul li {
+          margin-bottom: 0.5em; }
+      #trainersList .sectionTrainersList .container .element button {
+        height: 3em;
+        width: 6em;
+        margin-bottom: 1em; }
 
 /*# sourceMappingURL=maps/main.css.map */

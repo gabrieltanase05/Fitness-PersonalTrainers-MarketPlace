@@ -8,36 +8,31 @@ class ImageUploadX extends React.Component {
             imagePreviewUrl: '',
         };
     }
-
-
-    _handleSubmit(e) {
-        //e.preventDefault();
-        //Do something with -> this.state.file
-        const fileInput = document.querySelector('.fileInput');
+    handleSubmit(e) {
+        //Using fetch() upload the avatar images on server
         const formData = new FormData();
-        formData.append("avatar", this.state.file);
-            fetch("http://localhost:3000/users/1",{
-                method: 'PUT',
-                body: formData
+        formData.append('avatar', this.state.file);
+            fetch("http://localhost:3000/users/"+1+"/avatar",{
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                    "Content-Type":"multipart/form-data"
+                }
             }).then(response => {
                 response.json();
-                console.log(response)
-            }).then(
-                success => console.log(success) // Handle the success response object
-            ).catch(
-                error => console.log(error) // Handle the error response object
+            }).catch(
+                error => console.log(error)
             );
             this.setState({
                 edit:false
             });
             console.log('handle uploading-', this.state.file);
     }
-    _handleImageChange(e) {
-        //e.preventDefault();
-
+    handleImageChange(e) {
+        //Uploader for avatar images
         let reader = new FileReader();
         let file = e.target.files[0];
-
         reader.onloadend = () => {
             this.setState({
                 file: file,
@@ -54,7 +49,8 @@ class ImageUploadX extends React.Component {
         if (imagePreviewUrl) {
             $imagePreview = (<img src={imagePreviewUrl} />);
         } else {
-            $imagePreview = (<div className="previewText">Please select an Avatar</div>);
+            $imagePreview = (this.props.avatarImg !== undefined ?  <img src={this.props.avatarImg}/>
+                :<div className="previewText">Please select an Avatar</div>);
         }
 
         return (
@@ -62,14 +58,14 @@ class ImageUploadX extends React.Component {
                 <div className="imgPreview">
                     {$imagePreview}
                 </div>
-                <form onSubmit={(e)=>this._handleSubmit(e)}>
+                <form onSubmit={(e)=>this.handleSubmit(e)}>
                     <button className="submitButton"
                             type="submit"
-                            onClick={(e)=>this._handleSubmit(e)}>Upload
+                            onClick={(e)=>this.handleSubmit(e)}>Upload
                     </button>
                     <input className="fileInput"
                            type="file"
-                           onChange={(e)=>this._handleImageChange(e)} />
+                           onChange={(e)=>this.handleImageChange(e)} />
                 </form>
             </div>
         )
@@ -103,8 +99,7 @@ class MemberProfile extends React.Component {
     }
     componentDidMount() {
 //Using Fetch() sync the profile page with Database users.json
-        const url = "http://localhost:3000/users";
-        fetch(url,{
+        fetch("http://localhost:3000/users/" +this.state.id,{
             method: 'GET',
         }).then(response => {
             return response.json()
@@ -170,6 +165,10 @@ class MemberProfile extends React.Component {
     //This function allow to Update the information on Database
     updateInfo = (event) =>{
         const dataSend = {
+            avatar: this.state.avatar,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
             dateOfBirth: this.state.dateOfBirth,
             country: this.state.country,
             city: this.state.city,
@@ -188,8 +187,9 @@ class MemberProfile extends React.Component {
             })
         }).then(response => {
             response.json();
-            console.log(response)
-        });
+        }).catch(
+            error => console.log(error)
+        );
         this.setState({
             edit: false
         });
@@ -231,7 +231,7 @@ class MemberProfile extends React.Component {
                 :
                 <section>
                     <article className="generalInformation">
-                        <div> <ImageUploadX userId = {this.state.id}/> </div>
+                        <div> <ImageUploadX avatarImg = {this.state.avatar}/> </div>
                         <form><h1>General Information</h1>
                             <hr/>
                             <label>First Name: {this.state.firstName}

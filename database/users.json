@@ -1,10 +1,25 @@
 {
   "users": [
     {
-      "description": "kita kita kita ",
-      "medicalIssues": "kita",
-      "training": "asda",
-      "id": 1
+      "avatar": "https://media.licdn.com/dms/image/C4D03AQEMs0grGYLPig/profile-displayphoto-shrink_200_200/0?e=1573689600&v=beta&t=S6utnQhrjXhtpajt9vDdovTbRql7ZxbZRHvSeexHI0A",
+      "firstName": "Tanase",
+      "lastName": "Gabriel",
+      "email": "tanasegarbiel05@yaooh.com",
+      "dateOfBirth": "1994-05-16",
+      "country": "Romania",
+      "city": "Giurgiu",
+      "location": "Gym",
+      "foodType": "Omnivores",
+      "goal": "Bodybuilding",
+      "description": "Abcdef",
+      "medicalIssues": "Asdfggh",
+      "training": "Assdddeeea",
+      "id": 1,
+      "trainer": true,
+      "specialization": "bodybuilding",
+      "certification": "UNEFS",
+      "gyms": "WorldClass- DownTown",
+      "price": "15$"
     }
   ]
 }
