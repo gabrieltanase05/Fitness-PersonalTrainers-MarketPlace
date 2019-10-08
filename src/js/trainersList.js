@@ -62,6 +62,20 @@ class TrainersList extends React.Component {
                         </ul>
                         <button>I'm interesting</button>
                     </div>
+                    <div className="element">
+                        <div>
+                            <img src={this.state.avatar}/>
+                        </div>
+                        <ul>
+                            <li>Name:{this.state.lastName} {this.state.firstName}</li>
+                            <li>Specialization: {this.state.specialization}</li>
+                            <li>Certification:{this.state.certification}</li>
+                            <li>Gym:{this.state.gyms}</li>
+                            <li>Price/Session:{this.state.price}</li>
+                        </ul>
+                        <button>I'm interesting</button>
+                    </div>
+
                 </article>
             </section>
         )

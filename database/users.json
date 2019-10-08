@@ -11,15 +11,11 @@
       "location": "Gym",
       "foodType": "Omnivores",
       "goal": "Bodybuilding",
-      "description": "Abcdef",
-      "medicalIssues": "Asdfggh",
-      "training": "Assdddeeea",
-      "id": 1,
-      "trainer": true,
-      "specialization": "bodybuilding",
+      "description": "BEST TRAINER IN THE WORLD!",
+      "medicalIssues": "GOOD HEALTHY!",
+      "training": "A LOT !",
       "certification": "UNEFS",
-      "gyms": "WorldClass- DownTown",
-      "price": "15$"
+      "id": 1
     }
   ]
 }

@@ -647,10 +647,11 @@ ul {
 #trainersList {
   display: none;
   position: absolute;
-  top: 2em;
+  top: 8em;
   left: 2em;
   width: 95%;
   .sectionTrainersList {
+    margin: 5vh auto 10vh;
     .container {
       font-size: 1rem;
       .element{
@@ -693,4 +694,33 @@ ul {
     }
   }
 }
-
+//Register for Members Style Settings
+.register  {
+  display: none;
+  position: absolute;
+  background-color: #354152;
+  width: 100%;
+  height: 99vh;
+  top: 0;
+  .container{
+    margin-top: 3em;
+    padding: 1em 1em 1em 1em;
+    border: 1px solid #7e8ba3;
+    box-shadow: 0 0 200px #000;
+  }
+}
+//Login for Members Style Settings
+.login  {
+  display: none;
+  position: absolute;
+  background-color: #354152;
+  width: 100%;
+  height: 99vh;
+  top: 0;
+  .container{
+    margin-top: 10em;
+    padding: 1em 1em 1em 1em;
+    border: 1px solid #7e8ba3;
+    box-shadow: 0 0 140px #000;
+  }
+}

@@ -98,7 +98,7 @@ class MemberProfile extends React.Component {
         }
     }
     componentDidMount() {
-//Using Fetch() sync the profile page with Database users.json
+        //Using Fetch() sync the profile page with Database users.json
         fetch("http://localhost:3000/users/" +this.state.id,{
             method: 'GET',
         }).then(response => {
@@ -136,6 +136,11 @@ class MemberProfile extends React.Component {
     enableEditing = (event) => {
         this.setState({
             edit:true
+        });
+    };
+    cancelEditing = (event) => {
+        this.setState({
+            edit:false
         });
     };
     //Function for Edit Email Button
@@ -307,6 +312,7 @@ class MemberProfile extends React.Component {
                             <textarea name={'training'} placeholder="Describe your Training history in few words" rows={5}
                                       value={this.state.training} onChange={this.handleChange}/>
                             <label className="buttonEdit">
+                                <button onClick={this.cancelEditing}>Cancel</button>
                                 <button onClick={this.updateInfo}>Save</button>
                             </label>
                         </form>

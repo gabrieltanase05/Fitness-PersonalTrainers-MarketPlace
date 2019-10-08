@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function (event) {
 //-------------------------------------------------------------------------------------------//
+//JAVASCRIPT VANILLA FOR MEMBER-PAGE AND PROFILE-MEMBER//
    //Variables
    let menuBurger = document.querySelector('.burgerMenu');
    let bar1BurgerMenu = document.querySelector('.bar1');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         });
     //Event Listener on Profile Button
     let profilePage= document.getElementById('memberProfile');
-    let profileButton = document.querySelector('nav ul a');
+    let profileButton = document.querySelector('.profileBtn');
     profileButton.addEventListener('click', function (event) {
        if(profilePage.style.display=='block')
         {
@@ -122,7 +122,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     });
 
-
-
 //----------------------------------------------------------------------------------------//
-});
