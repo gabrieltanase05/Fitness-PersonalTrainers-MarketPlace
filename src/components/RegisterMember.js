@@ -14,15 +14,6 @@ class RegisterMember extends React.Component {
         }
 
     }
-    componentDidMount() {
-        // //Javascript - insert the file
-        // const script = document.createElement("script");
-        //
-        // script.src = "../../js/appMR.js";
-        // script.async = true;
-        //
-        // document.body.appendChild(script);
-    }
 
     //Change value of inputs
     handleChange =(event)=>{
@@ -38,6 +29,7 @@ class RegisterMember extends React.Component {
     //Submit the Registration and send Data to Mongo.db
 
     submitRegister = (event)=>{
+        event.preventDefault();
         const dataPost = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -47,7 +39,6 @@ class RegisterMember extends React.Component {
         axios.post('http://localhost:8080/api/register', {
             dataPost
         });
-
     };
     render() {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {getFromStorage} from "../utils/storage";
 
 class ImageUploadX extends React.Component {
     constructor(props) {
@@ -79,10 +80,8 @@ class MemberProfile extends React.Component {
             edit: false,
             displayEmail: 'none',
             displayPass: 'none',
-            loaded: false,
             id: '',
             avatar: '',
-            trainer: false,
             firstName: '',
             lastName: '',
             email: '',
@@ -95,36 +94,43 @@ class MemberProfile extends React.Component {
             description: '',
             medicalIssues: '',
             training: ''
-        }
+        };
     }
     componentDidMount() {
         //Using Fetch() sync the profile page with Database users.json
-        fetch("http://localhost:3000/users/" +this.state.id,{
-            method: 'GET',
-        }).then(response => {
-            return response.json()
-        }).then(data =>{
-            data.map(element => {
-                this.setState({
-                    loaded: true,
-                    id: element.id,
-                    avatar: element.avatar,
-                    trainer: element.trainer,
-                    firstName: element.firstName,
-                    lastName: element.lastName,
-                    email: element.email,
-                    dateOfBirth: element.dateOfBirth,
-                    country: element.country,
-                    city: element.city,
-                    location: element.location,
-                    foodType: element.foodType,
-                    goal: element.goal,
-                    description: element.description,
-                    medicalIssues: element.medicalIssues,
-                    training: element.training
-                });
-            });
-        });
+        const obj = getFromStorage('the_pt_app');
+        const {userID}=obj;
+        this.setState({id: userID});
+        const loadUserInfo= async ()=> {
+            try {
+                const response = await fetch("http://localhost:8080/api/userInfo?id=" +userID);
+                let json = await response.json();
+                    json = json[0];
+                 await setUserInfo(json);
+            }
+             catch (err) {
+                console.log("Error: "+err)
+            }
+         };
+         loadUserInfo();
+         const setUserInfo=(param)=>{
+                 this.setState({
+                     avatar: param.avatar,
+                     trainer: param.trainer,
+                     firstName: param.firstName,
+                     lastName: param.lastName,
+                     email: param.email,
+                     dateOfBirth: param.dateOfBirth,
+                     country: param.country,
+                     city: param.city,
+                     location: param.location,
+                     foodType: param.foodType,
+                     goal: param.goal,
+                     description: param.description,
+                     medicalIssues: param.medicalIssues,
+                     training: param.training
+                 });
+         }
     }
     //Change function to edit General information state
     handleChange = (event) => {
@@ -169,23 +175,24 @@ class MemberProfile extends React.Component {
     };
     //This function allow to Update the information on Database
     updateInfo = (event) =>{
+
         const dataSend = {
             avatar: this.state.avatar,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
             dateOfBirth: this.state.dateOfBirth,
-            country: this.state.country,
-            city: this.state.city,
+            country: this.state.country.trim(),
+            city: this.state.city.trim(),
             location: this.state.location,
             foodType: this.state.foodType,
             goal : this.state.goal,
-            description: this.state.description,
-            medicalIssues: this.state.medicalIssues,
-            training: this.state.training
+            description: this.state.description.trim(),
+            medicalIssues: this.state.medicalIssues.trim(),
+            training: this.state.training.trim()
         };
-        fetch("http://localhost:3000/users/" +this.state.id,{
-            method: 'PUT',
+        fetch("http://localhost:8080/api/updateUserInfo?id=" +this.state.id,{
+            method: 'POST',
             body: JSON.stringify(dataSend),
             headers: new Headers({
                 'Content-Type': 'application/json'
@@ -202,7 +209,7 @@ class MemberProfile extends React.Component {
     render() {
         return (
             this.state.edit === false ?
-                <section>
+                <section id={'memberProfile'}>
                     <article className="generalInformation">
                         <div><div className="imgPreview">
                             <img src={this.state.avatar}/>

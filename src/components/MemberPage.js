@@ -1,5 +1,4 @@
 import React from 'react'
-import {getFromStorage} from "../utils/storage";
 
 class MemberPage extends React.Component{
     constructor(props){

@@ -491,7 +491,7 @@ a:hover {
   display: none;
   position: absolute;
   top: 2em;
-  left: 10em;
+  left: 3em;
   width: 65%;
   z-index: 1; }
 
@@ -562,5 +562,8 @@ a:hover {
     padding: 1em 1em 1em 1em;
     border: 1px solid #7e8ba3;
     box-shadow: 0 0 140px #000; }
+
+.loading {
+  text-align: center; }
 
 /*# sourceMappingURL=maps/main.css.map */

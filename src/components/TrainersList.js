@@ -28,7 +28,6 @@ class TrainersList extends React.Component {
         }).then(data =>{
             data.map(element => {
                 this.setState({
-                    loaded: true,
                     id: element.id,
                     avatar: element.avatar,
                     trainer: element.trainer,

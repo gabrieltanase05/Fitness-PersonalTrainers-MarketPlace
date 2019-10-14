@@ -12,6 +12,7 @@ class Login extends React.Component {
     }
     //Submit the Registration and send Data to Mongo.db
     submitRegister = (event)=>{
+        event.preventDefault();
         const dataPost = {
             email: this.state.email,
             password: this.state.password
@@ -20,8 +21,10 @@ class Login extends React.Component {
             dataPost
         }).then(json=>{
             if(json.data.succes) {
+                console.log(json.data);
                 //Set in localStorage the Token
-                setInStorage('the_main_app',JSON.stringify({token: json.data.token}));
+                setInStorage('the_pt_app',JSON.stringify({token: json.data.token
+                , userID: json.data.userid}));
                 this.props.tokenChange(json.data.token);
             }
             });
@@ -31,7 +34,7 @@ class Login extends React.Component {
     //Change value of inputs
     handleChange =(event)=>{
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value.trim()
         });
     };
     render() {

@@ -1,39 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 
-import {MemberProfile} from './memberProfile';
-import {TrainersList} from './trainersList';
-import {RegisterMember} from './registerMember'
-import {Login} from './login'
-import {MemberPage} from "./memberPage";
-import {Visitor} from "./visitor";
+import {MemberProfile} from '../components/MemberProfile';
+import {TrainersList} from '../components/TrainersList';
+import {RegisterMember} from '../components/RegisterMember';
+import {Login} from '../components/Login';
+import {MemberPage} from "../components/MemberPage";
+import {Visitor} from "../components/Visitor";
 
-import { getFromStorage, setInStorage} from "../utils/storage";
+import { getFromStorage} from "../utils/storage";
 
 class Index extends React.Component {
     constructor(props){
         super(props);
-        //this.tokenChange=this.tokenChange.bind(this);
         this.state={
             isLoading: true,
             token: ''
         };
     }
     logout=(event)=>{
-        console.log('works');
         this.setState({
             isLoading:true
         });
-        const obj = getFromStorage('the_main_app');
+        const obj = getFromStorage('the_pt_app');
         //Check the token
         if (obj && obj.token) {
             const {token} = obj;
-            fetch("http://localhost:8080/api/logout?token=" + token)
+            fetch("http://localhost:8080/api/logout?token=" + token,{
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
                 .then(res => res.json())
                 .then(json => {
                     if (json.succes) {
-                        console.log(json);
                         this.setState({
                             token: '',
                             isLoading: false
@@ -58,7 +59,7 @@ class Index extends React.Component {
     };
     componentDidMount() {
         //Verify the token to login
-        const obj = getFromStorage('the_main_app');
+        const obj = getFromStorage('the_pt_app');
         //Check the token
         if(obj && obj.token){
             const {token} = obj;
@@ -86,7 +87,7 @@ class Index extends React.Component {
 
     render() {
         if (this.state.isLoading){
-            return (<h1>Loading...</h1>)
+            return (<h1 className={'loading'}>Loading...</h1>)
         }
         if(!this.state.token){
             return (
@@ -99,7 +100,10 @@ class Index extends React.Component {
             )
         }
         return(
-            <MemberPage logout={this.logout}/>
+                <>
+                    <MemberPage logout={this.logout}/>
+                    <MemberProfile/>
+                </>
         )
     }
 }
@@ -107,8 +111,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 //-----------------------------------------------------------------------//
     ReactDOM.render(
         <Index/>, document.getElementById('root'));
-    ReactDOM.render(
-    <MemberProfile/>, document.getElementById('memberProfile'));
     ReactDOM.render(
     <TrainersList/>, document.getElementById('trainersList'));
 
