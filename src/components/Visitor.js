@@ -28,6 +28,15 @@ componentDidMount() {
                         </div>
                         <ul>
                             <li>
+                                <a href="../../About.html">About</a>
+                            </li>
+                            <li>
+                                <a href="../../Contact.html">Contact</a>
+                            </li>
+                            <li>
+                                <a href="../../Help.html">Help</a>
+                            </li>
+                            <li>
                                 <a href='#' id="loginButton">Login</a>
                             </li>
                         </ul>
@@ -62,25 +71,9 @@ componentDidMount() {
                 <section id="sectionFourVisitor">
                     <div className="container">
                         <h1> MOTIVATIONAL TEXT FOR TRAINERS TO </h1>
-                        <button>SignUp</button>
+                        <button className={"trainerRegisterBtn"}>SignUp</button>
                     </div>
                 </section>
-                <footer>
-                    <div className="container">
-                        <ul>
-                            <li>
-                                <a href="../../About.html">About</a>
-                            </li>
-                            <li>
-                                <a href="../../Contact.html">Contact</a>
-                            </li>
-                            <li>
-                                <a href="../../Help.html">Help</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </footer>
                 <footer className="socialMedia">
                     <div className="container">
                         <div className="facebook"><a href="#">F</a></div>

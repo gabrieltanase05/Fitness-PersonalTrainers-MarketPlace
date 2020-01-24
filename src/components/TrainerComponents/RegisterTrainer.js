@@ -1,6 +1,6 @@
 import React from 'react'
 
-class RegisterMember extends React.Component {
+class RegisterTrainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -36,7 +36,8 @@ class RegisterMember extends React.Component {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: password
+            password: password,
+            isTrainer: true
         };
         const signupUser= async ()=> {
             try {
@@ -50,7 +51,8 @@ class RegisterMember extends React.Component {
                 let json = await response.json();
                 this.setState({
                     signupJson: json
-                })
+                });
+                console.log(json);
             }
             catch (err) {
                 console.log("Error: "+err)
@@ -58,46 +60,51 @@ class RegisterMember extends React.Component {
         };
         if(password.length >= 8 && password === passwordRepeat){
             signupUser();
+        } else {
+            this.setState({
+                signupJson: {
+                    succes: false,
+                    message: "Password is to short or is not the same with Repeat Password"
+                }
+            })
         }
     };
     render() {
         if(this.state.signupJson.succes==false){
             return (
-                <form className="register" onSubmit={this.submitRegister}>
+                <form className="registerTrainer" onSubmit={this.submitRegister}>
                     <div className="container">
-                        <h1>Create account</h1>
+                        <h1>Create account as Personal Trainer</h1>
                         <hr/>
+                        <div className={"validationMessage"}>{this.state.signupJson.message}</div>
                         <label htmlFor="text"><b>First Name</b>
                             <input type="text" placeholder="Enter First Name" name="firstName" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.firstNameError}</p>
                         </label>
 
                         <label htmlFor="text"><b>Last Name</b>
                             <input type="text" placeholder="Enter LastName" name="lastName" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.lastNameError}</p>
                         </label>
 
                         <label htmlFor="email"><b>Email</b>
                             <input type="email" placeholder="Enter Email" name="email" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.emailError}</p>
                         </label>
 
                         <label htmlFor="password"><b>Password</b>
                             <input type="password" placeholder="Enter Password" name="password" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.passwordError}</p>
                         </label>
 
                         <label htmlFor="password-repeat"><b>Repeat Password</b>
                             <input type="password" placeholder="Repeat Password" name="passwordRepeat" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.rePasswordError}</p>
                         </label>
                         <label>
                             <input type="checkbox" name="terms" onChange={this.changeCheckbox} defaultChecked={false} required/>
                             I' agree to the <a href="#" >Terms and Privacy</a>.
-                            <p className={'errors'}>{this.state.termsError}</p>
+                        </label>
+                        <label>
+                                <p>I SignUp for Personal Trainer Account.</p>
                         </label>
                         <div className="clearfix">
-                            <button type="button" className="cancelbtn" id="cancelMR" >Cancel</button>
+                            <button type="button" className="cancelbtn" id="cancelTR" >Cancel</button>
                             <button type="submit" className="signupbtn" >Register</button>
                         </div>
                     </div>
@@ -107,11 +114,10 @@ class RegisterMember extends React.Component {
            return(
                 <div className={'succesSignup'}>
                     <h1>{this.state.signupJson.message}</h1>
-                    <h1>Please Login!</h1>
                 </div>
            )
         }
     }
 }
 
-export {RegisterMember};
+export {RegisterTrainer};

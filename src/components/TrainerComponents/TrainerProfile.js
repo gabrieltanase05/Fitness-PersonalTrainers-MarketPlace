@@ -1,5 +1,5 @@
 import React from 'react';
-import {getFromStorage} from "../utils/storage";
+import {getFromStorage} from "../../utils/storage";
 
 class ImageUploadX extends React.Component {
     constructor(props) {
@@ -73,7 +73,7 @@ class ImageUploadX extends React.Component {
     }
 }
 //Component General Information
-class MemberProfile extends React.Component {
+class TrainerProfile extends React.Component {
     constructor(props){
         super(props);
         this.state={
@@ -328,4 +328,4 @@ class MemberProfile extends React.Component {
         )
     }
 }
-export {MemberProfile};
+export {TrainerProfile};

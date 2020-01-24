@@ -1,6 +1,6 @@
 import React from 'react'
 
-class MemberPage extends React.Component{
+class TrainerPage extends React.Component{
     constructor(props){
         super(props)
     }
@@ -98,4 +98,4 @@ class MemberPage extends React.Component{
     }
 }
 
-export {MemberPage}
+export {TrainerPage}

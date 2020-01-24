@@ -45,6 +45,7 @@ nav {
     a{
       background-color: transparent;
       border: none;
+      padding:0;
     }
     //Mobile Media query
     @media only screen and (max-width: 599px){
@@ -76,8 +77,8 @@ nav {
   margin-left: 3.2em;
   cursor: pointer;
   .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 40px;
+    height: 6px;
     background-color: #000;
     margin: 6px 0;
     transition: 0.3s;
@@ -429,7 +430,7 @@ ul {
       font-weight: 400;
       //Mobile Media query
       @media only screen and (max-width: 599px){
-        font-size: 2.5em;
+        font-size: 2.2em;
       }
       //Tablet Media query
       @media only screen and (min-width: 600px) and (max-width: 1024px){
@@ -468,7 +469,7 @@ ul {
   input[type=text],input[type=email], input[type=password] {
     width: 70%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+    margin: 7px;
     display: block;
     background: #f1f1f1;
     border: 1px solid #f1f1f1;
@@ -524,7 +525,7 @@ ul {
   clear: both;
   display: table;
 }
-//MemberProfile Style Settings
+//TrainerProfile Style Settings
 //General Information Style Settings
 #memberProfile section {
     background-color: rgb(250, 250, 250);
@@ -634,7 +635,7 @@ ul {
   }
 }
 
-//MemberProfile Style Settings
+//TrainerProfile Style Settings
 #memberProfile {
   display: none;
   position: absolute;
@@ -694,8 +695,8 @@ ul {
     }
   }
 }
-//Register for Members Style Settings
-.register  {
+//Register Style Settings
+.register, .registerTrainer  {
   display: none;
   position: absolute;
   background-color: #354152;
@@ -708,6 +709,15 @@ ul {
     border: 1px solid #7e8ba3;
     box-shadow: 0 0 200px #000;
   }
+}
+.registerTrainer p {
+  font-weight: 800;
+  color: #f44336;
+  border: #f44336 solid 2px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #000;
+  //margin: 0 4em;
 }
 //Login for Members Style Settings
 .login  {
@@ -726,4 +736,16 @@ ul {
 }
 .loading {
   text-align: center;
+}
+.succesSignup {
+  //margin:0 auto;
+  width: 70%;
+  background-color: #7e8ba3;
+  text-align: center;
+  position: absolute;
+}
+.validationMessage {
+  height: 1rem;
+  margin-bottom: 0.5em;
+  color: #ff0000;
 }

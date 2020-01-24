@@ -73,7 +73,7 @@ class ImageUploadX extends React.Component {
     }
 }
 //Component General Information
-class TrainerProfile extends React.Component {
+class MemberProfile extends React.Component {
     constructor(props){
         super(props);
         this.state={
@@ -328,4 +328,4 @@ class TrainerProfile extends React.Component {
         )
     }
 }
-export {TrainerProfile};
+export {MemberProfile};

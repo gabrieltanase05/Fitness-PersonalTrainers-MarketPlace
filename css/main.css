@@ -40,7 +40,8 @@ nav {
   margin: 0 auto; }
   nav div a {
     background-color: transparent;
-    border: none; }
+    border: none;
+    padding: 0; }
   @media only screen and (max-width: 599px) {
     nav div {
       height: 17vw;
@@ -65,8 +66,8 @@ nav {
   margin-left: 3.2em;
   cursor: pointer; }
   .burgerMenu .bar1, .burgerMenu .bar2, .burgerMenu .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 40px;
+    height: 6px;
     background-color: #000;
     margin: 6px 0;
     transition: 0.3s; }
@@ -330,7 +331,7 @@ a:hover {
       font-weight: 400; }
       @media only screen and (max-width: 599px) {
         .socialMedia .container a {
-          font-size: 2.5em; } }
+          font-size: 2.2em; } }
       @media only screen and (min-width: 600px) and (max-width: 1024px) {
         .socialMedia .container a {
           font-size: 4em; } }
@@ -356,7 +357,7 @@ a:hover {
 .register input[type=text], .register input[type=email], .register input[type=password], .login input[type=text], .login input[type=email], .login input[type=password], .registerTrainer input[type=text], .registerTrainer input[type=email], .registerTrainer input[type=password] {
   width: 70%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 7px;
   display: block;
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
@@ -537,18 +538,26 @@ a:hover {
           width: 6em;
           margin-bottom: 1em; }
 
-.register {
+.register, .registerTrainer {
   display: none;
   position: absolute;
   background-color: #354152;
   width: 100%;
   height: 99vh;
   top: 0; }
-  .register .container {
+  .register .container, .registerTrainer .container {
     margin-top: 3em;
     padding: 1em 1em 1em 1em;
     border: 1px solid #7e8ba3;
     box-shadow: 0 0 200px #000; }
+
+.registerTrainer p {
+  font-weight: 800;
+  color: #f44336;
+  border: #f44336 solid 2px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #000; }
 
 .login {
   display: none;
@@ -565,5 +574,16 @@ a:hover {
 
 .loading {
   text-align: center; }
+
+.succesSignup {
+  width: 70%;
+  background-color: #7e8ba3;
+  text-align: center;
+  position: absolute; }
+
+.validationMessage {
+  height: 1rem;
+  margin-bottom: 0.5em;
+  color: #ff0000; }
 
 /*# sourceMappingURL=maps/main.css.map */

@@ -1,6 +1,6 @@
 import React from 'react'
 
-class RegisterTrainer extends React.Component {
+class RegisterMember extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -36,7 +36,8 @@ class RegisterTrainer extends React.Component {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: password
+            password: password,
+            isTrainer: false
         };
         const signupUser= async ()=> {
             try {
@@ -69,32 +70,26 @@ class RegisterTrainer extends React.Component {
                         <hr/>
                         <label htmlFor="text"><b>First Name</b>
                             <input type="text" placeholder="Enter First Name" name="firstName" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.firstNameError}</p>
                         </label>
 
                         <label htmlFor="text"><b>Last Name</b>
                             <input type="text" placeholder="Enter LastName" name="lastName" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.lastNameError}</p>
                         </label>
 
                         <label htmlFor="email"><b>Email</b>
                             <input type="email" placeholder="Enter Email" name="email" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.emailError}</p>
                         </label>
 
                         <label htmlFor="password"><b>Password</b>
                             <input type="password" placeholder="Enter Password" name="password" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.passwordError}</p>
                         </label>
 
                         <label htmlFor="password-repeat"><b>Repeat Password</b>
                             <input type="password" placeholder="Repeat Password" name="passwordRepeat" onChange={this.handleChange} required/>
-                            <p className={'errors'}>{this.state.rePasswordError}</p>
                         </label>
                         <label>
                             <input type="checkbox" name="terms" onChange={this.changeCheckbox} defaultChecked={false} required/>
-                            I' agree to the <a href="#" >Terms and Privacy</a>.
-                            <p className={'errors'}>{this.state.termsError}</p>
+                            I' agree to the <a href="#" >Terms and Privacy</a>
                         </label>
                         <div className="clearfix">
                             <button type="button" className="cancelbtn" id="cancelMR" >Cancel</button>
@@ -114,4 +109,4 @@ class RegisterTrainer extends React.Component {
     }
 }
 
-export {RegisterTrainer};
+export {RegisterMember};

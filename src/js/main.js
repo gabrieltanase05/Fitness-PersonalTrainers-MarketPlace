@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {MemberProfile} from '../components/MemberProfile';
+import {MemberProfile} from '../components/MemberComponents/MemberProfile';
+import {TrainerProfile} from "../components/TrainerComponents/TrainerProfile";
+import {RegisterMember} from '../components/MemberComponents/RegisterMember';
+import {RegisterTrainer} from "../components/TrainerComponents/RegisterTrainer";
+import {MemberPage} from "../components/MemberComponents/MemberPage";
+import {TrainerPage} from "../components/TrainerComponents/TrainerPage";
 import {TrainersList} from '../components/TrainersList';
-import {RegisterMember} from '../components/RegisterMember';
-import {Login} from '../components/Login';
-import {MemberPage} from "../components/MemberPage";
 import {Visitor} from "../components/Visitor";
-
+import {Login} from '../components/Login';
 import { getFromStorage} from "../utils/storage";
 
 class Index extends React.Component {
@@ -90,11 +92,13 @@ class Index extends React.Component {
             return (<h1 className={'loading'}>Loading...</h1>)
         }
         if(!this.state.token){
+
             return (
                 <>
                     <Visitor/>
                     <Login tokenChange={this.tokenChange} />
                     <RegisterMember/>
+                    <RegisterTrainer/>
                 </>
 
             )
